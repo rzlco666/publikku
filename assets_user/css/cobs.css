@@ -1,0 +1,15 @@
+<style type="text/css">/*<![CDATA[*/#carbonads a,#carbonads a:hover{color:inherit}#carbonads,.carbon-img{max-width:var(--width);display:block}#carbonads{display: inline-block; --width:180px;--font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;overflow:hidden;margin-bottom:20px;border-radius:4px;text-align:center;box-shadow:0 0 0 1px hsla(0,0%,0%,.1);background-color:#f9f9f9;font-size:var(--font-size);line-height:1.5}#carbonads a{text-decoration:none}#carbonads span{position:relative;display:block;overflow:hidden}.carbon-img{margin-bottom:8px;line-height:1}.carbon-img img{display:block;margin:0 auto;max-width:var(--width)!important;width:var(--width);height:auto}.carbon-text{display:block;padding:0 1em 8px}.carbon-poweredby{display:block;padding:10px var(--font-size);background:repeating-linear-gradient(-45deg,transparent,transparent 5px,hsla(0,0%,0%,.025) 5px,hsla(0,0%,0%,.025) 10px) hsla(203,11%,95%,.4);text-transform:uppercase;letter-spacing:.5px;font-weight:600;font-size:9px;line-height:0}@media only screen and (min-width:320px) and (max-width:759px){#carbonads{float:none;margin:0 auto;max-width:330px}#carbonads span{position:relative}#carbonads>span{max-width:none}.carbon-img{float:left;margin:0}.carbon-img img{max-width:130px!important}.carbon-text{float:left;margin-bottom:0;padding:8px 20px;text-align:left;max-width:calc(100% - 130px - 3em)}.carbon-poweredby{left:130px;bottom:0;display:block;width:100%}}/*]]>*/</style>
+
+<script type="text/javascript">APPBASE = '';
+      ISLOGIN = '1';
+      $('.snippets-download').addClass('active');
+      
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-49755460-1', 'auto', {'allowLinker': true});
+        ga('require', 'linker');
+        ga('linker:autoLink', ['bootdey.com','www.bootdey.com','demos.bootdey.com'] );
+        ga('send', 'pageview');</script>
