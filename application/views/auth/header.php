@@ -1,29 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<title>Login V18</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="<?=base_url('assets_auth/'); ?>images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>css/util.css">
-	<link rel="stylesheet" type="text/css" href="<?=base_url('assets_auth/'); ?>css/main.css">
-<!--===============================================================================================-->
-</head>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Desa Keden</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesdesign" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="<?=base_url('assets/'); ?>img/klaten333.ico">
+
+        <!-- Bootstrap Css -->
+        <link href="<?=base_url('assets_user/'); ?>css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="<?=base_url('assets_user/'); ?>css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="<?=base_url('assets_user/'); ?>css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>

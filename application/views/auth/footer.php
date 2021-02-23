@@ -1,19 +1,15 @@
-<!--===============================================================================================-->
-<script src="<?=base_url('assets_auth/'); ?>vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?=base_url('assets_auth/'); ?>vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?=base_url('assets_auth/'); ?>vendor/bootstrap/js/popper.js"></script>
-	<script src="<?=base_url('assets_auth/'); ?>vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?=base_url('assets_auth/'); ?>vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="<?=base_url('assets_auth/'); ?>vendor/daterangepicker/moment.min.js"></script>
-	<script src="<?=base_url('assets_auth/'); ?>vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="<?=base_url('assets_auth/'); ?>vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="<?=base_url('assets_auth/'); ?>js/main.js"></script>
+<!-- end Account pages -->
 
-</body>
+        <!-- JAVASCRIPT -->
+        <script src="<?=base_url('assets_user/'); ?>libs/jquery/jquery.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/metismenu/metisMenu.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/simplebar/simplebar.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/node-waves/waves.min.js"></script>
+
+        <script src="https://unicons.iconscout.com/release/v2.0.1/script/monochrome/bundle.js"></script>
+
+        <script src="<?=base_url('assets_user/'); ?>js/app.js"></script>
+
+    </body>
 </html>

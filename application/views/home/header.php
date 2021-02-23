@@ -71,9 +71,23 @@
         </ul>
 
       </nav><!-- .nav-menu -->
+      <?php 
 
-      <a href="index.html" class="get-started-btn ml-auto">Login</a>
-      <a href="index.html" class="get-started-btn">Register</a>
+        if(empty($this->session->userdata('is_login')))
+        {
+          ?>
+          <a href="<?=base_url('Auth/login'); ?>" class="get-started-btn ml-auto">Login</a>
+          <a href="<?=base_url('Auth/daftar'); ?>" class="get-started-btn">Register</a>
+      <?php
+        }else{
+          ?>
+          <a href="<?=base_url('Dashboard'); ?>" class="get-started-btn ml-auto">Dashboard</a>
+      <?php
+      
+        }
+
+      ?>
+      
 
     </div>
   </header><!-- End Header -->

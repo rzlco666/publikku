@@ -3,144 +3,73 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
-
-    public function __construct()
+    function __construct()
     {
-
         parent::__construct();
-        $this->load->model('Auth_model');
-        $this->load->library('form_validation');
-
+        $this->load->model('authen');
     }
 
-    public function index()
+    public function login()
     {
-
-        $this->form_validation->set_rules('username', 'Username', 'trim|required');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required');
-
-        if ($this->form_validation->run() == false) {
-
-            $data['title'] = 'Login Page';
-
-            $this->load->view('auth/header', $data);
-            $this->load->view('auth/login');
-            $this->load->view('auth/footer');
-        } else {
-            $this->__login();
-        }
-
-    }
-
-    public function regist()
-    {
-
-        $data['title'] = 'Regsiter Page';
-
-        $this->load->view('auth/header', $data);
-        $this->load->view('auth/regis');
+        $this->load->view('auth/header');
+        $this->load->view('auth/login');
         $this->load->view('auth/footer');
-
     }
 
-    public function registAdmin()
+    public function proses_login()
     {
-
-        $this->form_validation->set_rules('username', 'Username', 'required|trim');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim');
-
-        if ($this->form_validation->run() == false) {
-            $data['title'] = 'Regsiter Page';
-
-            $this->load->view('auth/header', $data);
-            $this->load->view('auth/regis');
-            $this->load->view('auth/footer');
-
-        } else {
-
-            $data = [
-                'username' => $this->input->post('username', true),
-                'email' => $this->input->post('email', true),
-                'password' => $this->input->post('password', true),
-
-            ];
-
-            $this->Auth_model->addAdmin($data);
-
-            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Selamat!</strong> Akun anda sudah di buat.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>');
-
-            redirect('auth');
-
-        }
-
-    }
-
-    private function __login()
-    {
-
-        $username = $this->input->post('username');
+        $email = $this->input->post('email');
         $password = $this->input->post('password');
-
-        $admin = $this->Auth_model->getAdminLogin($username);
-
-        if ($admin) {
-
-            if ($admin['password'] == $password) {
-
-                $data = [
-
-                    'email' => $admin['email'],
-                    'id' => $admin['id'],
-                    'username' => $admin['username'],
-                    'password' => $admin['password'],
-
-                ];
-
-                $this->session->set_userdata($data);
-
-                redirect('user');
-
-            } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Maaf!</strong> Password Salah.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>');
-
-                redirect('auth');
-            }
-
-        } else {
-
-            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Maaf!</strong> Akun belum di buat.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>');
-
-            redirect('auth');
-
+        if($this->authen->login_user($email,$password))
+        {
+            redirect('Dashboard');
         }
-
+        else
+        {
+            $this->session->set_flashdata('error','Username & Password salah');
+            redirect('Auth/login');
+        }
     }
 
     public function logout()
     {
-        $this->session->unset_userdata('id');
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('username');
-        $this->session->unset_userdata('password');
+        $this->session->unset_userdata('id_user');
+        $this->session->unset_userdata('KTP');
+        $this->session->unset_userdata('is_login');
+        redirect('Auth/login');
+    }
 
-        redirect('user');
+    public function daftar()
+    {
+        $this->load->view('auth/header');
+        $this->load->view('auth/daftar');
+        $this->load->view('auth/footer');
+    }
 
+    public function proses_daftar()
+    {
+        $this->form_validation->set_rules('email', 'email','trim|required|min_length[1]|max_length[255]|is_unique[user.email]');
+        $this->form_validation->set_rules('KTP', 'KTP','trim|required|min_length[1]|max_length[255]|is_unique[user.KTP]');
+        $this->form_validation->set_rules('password', 'password','trim|required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('username', 'username','trim|required|min_length[1]|max_length[255]');
+        if ($this->form_validation->run()==true)
+        {
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $username = $this->input->post('username');
+            $alamat = $this->input->post('alamat');
+            $KTP = $this->input->post('KTP');
+            $this->authen->register($email,$password,$username,$alamat,$KTP);
+            $this->session->set_flashdata('success_register','Proses Pendaftaran User Berhasil');
+            redirect('Auth/login');
+        }
+        else
+        {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect('Auth/daftar');
+        }
     }
 
 }
