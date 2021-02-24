@@ -5,8 +5,8 @@
         <meta charset="utf-8" />
         <title>Desa Keden</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
+        <meta content="Website Resmi Desa Keden" name="description" />
+        <meta content="Desa Keden" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?=base_url('assets/'); ?>img/klaten333.ico">
 

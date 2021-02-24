@@ -10,9 +10,16 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect">
+                                <a href="<?=base_url('Dashboard'); ?>" class="waves-effect">
                                     <div class="d-inline-block icons-sm mr-1"><i class="uim uim-airplay"></i></div>
                                     <span>Dashboard</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?=base_url('Profil'); ?>" class="waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-cube"></i></div>
+                                    <span>Profil</span>
                                 </a>
                             </li>
 

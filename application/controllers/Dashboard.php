@@ -12,9 +12,11 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
-        $this->load->view('templates_user/header');
+        $id_user = $this->session->userdata('id_user');
+        $data['user'] = $this->authen->getById($id_user);
+        $this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');
-        $this->load->view('dashboard/index');
+        $this->load->view('dashboard/index',$data);
         $this->load->view('templates_user/footer');
     }
 

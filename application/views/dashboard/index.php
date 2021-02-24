@@ -15,22 +15,6 @@
                                     <li class="breadcrumb-item active">Selamat Datang di Website Resmi Desa Keden</li>
                                     </ol>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="float-right d-none d-md-block">
-                                        <div class="dropdown">
-                                            <button class="btn btn-light btn-rounded dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="mdi mdi-settings-outline mr-1"></i> Settings
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Separated link</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
@@ -45,11 +29,29 @@
                                         <div class="card-body">
                                         <div class="row">
                                                 <div class="col-6">
-                                                    <h5><?php echo $this->session->userdata('username'); ?></h5>
-                                                    <p class="text-muted">NIK : <?php echo $this->session->userdata('KTP'); ?></p>
+                                                    <h5><?php echo $user->username; ?></h5>
+                                                    <p class="text-muted">
+                                                        <table>
+                                                            <tr>
+                                                                <td>Alamat</td>
+                                                                <td>:</td>
+                                                                <td><?php echo $user->alamat; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NIK</td>
+                                                                <td>:</td>
+                                                                <td><?php echo $user->KTP; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Email</td>
+                                                                <td>:</td>
+                                                                <td><?php echo $user->email; ?></td>
+                                                            </tr>
+                                                        </table>
+                                                    </p>
 
                                                     <div class="mt-4">
-                                                        <a href="#" class="btn btn-primary btn-sm">Ubah Profil <i class="mdi mdi-arrow-right ml-1"></i></a>
+                                                        <a href="<?php echo base_url(); ?>Profil/edit/<?php echo $this->session->userdata('id_user'); ?>" class="btn btn-primary btn-sm">Ubah Profil <i class="mdi mdi-arrow-right ml-1"></i></a>
                                                     </div>
                                                 </div>
 

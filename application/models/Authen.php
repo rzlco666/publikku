@@ -30,7 +30,9 @@ class Authen extends CI_Model
                 $this->session->set_userdata('email',$email);
 				$this->session->set_userdata('username',$data_user->username);
                 $this->session->set_userdata('id_user',$data_user->id_user);
+                $this->session->set_userdata('alamat',$data_user->alamat);
                 $this->session->set_userdata('KTP',$data_user->KTP);
+                $this->session->set_userdata('password',$data_user->password);
 				$this->session->set_userdata('is_login',TRUE);
                 return TRUE;
             } else {
@@ -50,5 +52,25 @@ class Authen extends CI_Model
 			redirect('Auth/login');
 		}
     }
+
+    public function getById($id_user)
+    {
+        $id_user = $this->session->userdata('id_user');
+        return $this->db->get_where('user', ["id_user" => $id_user])->row();
+    }
+ 
+    public function update($email,$password,$username,$alamat,$KTP)
+    {
+        $id_user = $this->session->userdata('id_user');
+        $data_user = array(
+            'email'=>$email,
+            'password'=>$password,
+            'username'=>$username,
+            'alamat'=>$alamat,
+            'KTP'=>$KTP
+        );
+        $this->db->update('user', $data_user, array('id_user' => $id_user));
+    }
+
 }
 ?>

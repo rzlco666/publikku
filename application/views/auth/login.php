@@ -24,7 +24,7 @@
                                     <?php 
                                         if($this->session->flashdata('error') !='')
                                         {
-                                            echo '<div class="alert alert-danger" role="alert">';
+                                            echo '<div class="alert alert-primary" role="alert">';
                                             echo $this->session->flashdata('error');
                                             echo '</div>';
                                         }
@@ -33,7 +33,7 @@
                                     <?php 
                                         if($this->session->flashdata('success_register') !='')
                                         {
-                                            echo '<div class="alert alert-info" role="alert">';
+                                            echo '<div class="alert alert-success" role="alert">';
                                             echo $this->session->flashdata('success_register');
                                             echo '</div>';
                                         }

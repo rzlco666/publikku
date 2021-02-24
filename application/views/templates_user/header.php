@@ -3,12 +3,12 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Dashboard | Xoric - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>Desa Keden</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
+        <meta content="Website Resmi Desa Keden" name="description" />
+        <meta content="Desa Keden" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="<?=base_url('assets_user/'); ?>images/favicon.ico">
+        <link rel="shortcut icon" href="<?=base_url('assets/'); ?>img/klaten333.ico">
 
         <!-- datepicker -->
         <link href="<?=base_url('assets_user/'); ?>libs/air-datepicker/css/datepicker.min.css" rel="stylesheet" type="text/css" />
@@ -25,7 +25,7 @@
 
     </head>
 
-    <body data-topbar="colored">
+    <body style="overflow: scroll;" data-topbar="colored">
 
         <!-- Begin page -->
         <div id="layout-wrapper">
@@ -99,13 +99,13 @@
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="rounded-circle header-profile-user" src="<?=base_url('assets_user/'); ?>images/users/avatar-1.jpg" alt="Header Avatar">
-                                <span class="d-none d-sm-inline-block ml-1"><?php echo $this->session->userdata('username'); ?></span>
+                                <span class="d-none d-sm-inline-block ml-1"><?php echo $user->username; ?></span>
                                 <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-settings font-size-16 align-middle mr-1"></i> Settings</a>
+                                <a class="dropdown-item" href="<?php echo base_url('Profil'); ?>"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1"></i> Profile</a>
+                                <a class="dropdown-item" href="<?php echo base_url(); ?>Profil/edit/<?php echo $this->session->userdata('id_user'); ?>"><i class="mdi mdi-account-settings font-size-16 align-middle mr-1"></i> Settings</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?php echo base_url('Auth/logout'); ?>"><i class="mdi mdi-logout font-size-16 align-middle mr-1"></i> Logout</a>
                             </div>
