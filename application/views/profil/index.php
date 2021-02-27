@@ -49,6 +49,9 @@
                                                                 </tr>
                                                             </table>
                                                         </p>
+                                                        <div class="mt-4 text-right">
+                                                            <a class="btn btn-primary waves-effect waves-light" href="<?php echo base_url(); ?>Profil/upload/<?php echo $this->session->userdata('id_user'); ?>" class="btn btn-warning">Ubah Foto</a>
+                                                        </div>
                                                     </div>
                                                 </div>
 

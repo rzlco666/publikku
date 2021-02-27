@@ -95,15 +95,7 @@
                                 <div class="col-xl-8">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form class="form-inline float-right">
-                                                <div class="input-group mb-3">
-                                                    <input type="text" class="form-control form-control-sm datepicker-here" data-range="true"  data-multiple-dates-separator=" - " data-language="en" placeholder="Select Date" />
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text"><i class="far fa-calendar font-size-12"></i></span>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <h5 class="header-title mb-4">Sales Report</h5>
+                                            <h5 class="header-title mb-4">Form Laporan</h5>
                                             <div id="yearly-sale-chart" class="apex-charts"></div>
                                         </div>
                                     </div>

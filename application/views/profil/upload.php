@@ -63,42 +63,14 @@
                                 <div class="col-xl-8">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="header-title mb-4">Update Profil</h5>
-                                            <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Profil/update">
+                                            <h5 class="header-title mb-4">Upload Foto</h5>
+                                            <?= form_open_multipart('Profil/editf'); ?>
 
                                             <div class="form-group row">
-                                                <label for="username" class="col-md-2 col-form-label">Nama</label>
+                                                <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
+                                                <label for="foto" class="col-md-2 col-form-label">Foto</label>
                                                 <div class="col-md-10">
-                                                    <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
-                                                    <input class="form-control" type="text" value="<?php echo $user->username; ?>" name="username" id="username">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label for="alamat" class="col-md-2 col-form-label">Alamat</label>
-                                                <div class="col-md-10">
-                                                    <input class="form-control" type="text" value="<?php echo $user->alamat; ?>" name="alamat" id="alamat">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label for="KTP" class="col-md-2 col-form-label">NIK (KTP)</label>
-                                                <div class="col-md-10">
-                                                    <input class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="KTP" id="KTP">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label for="email" class="col-md-2 col-form-label">Email</label>
-                                                <div class="col-md-10">
-                                                    <input class="form-control" type="email" value="<?php echo $user->email; ?>" name="email" id="email">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label for="password" class="col-md-2 col-form-label">Password</label>
-                                                <div class="col-md-10">
-                                                    <input class="form-control" type="password" value="<?php echo $user->password; ?>" name="password" id="password">
+                                                    <input class="form-control" type="file" name="image" id="foto">
                                                 </div>
                                             </div>
 
