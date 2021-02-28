@@ -97,19 +97,27 @@
                                         <div class="card-body">
                                             <h5 class="header-title mb-4">Form Laporan</h5>
                                             <p class="card-title-desc">Desa Keden melayani pelaporan online dari masyarakat</p>
-                                            <form>
+                                            <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Lapor/save">
 
                                             <div class="form-group row">
                                                 <label class="col-md-2 col-form-label">Isi Laporan</label>
                                                 <div class="col-md-10">
-                                                    <textarea class="form-control" id="elm1" name="area">Jelaskan hal yang ingin dilaporkan</textarea>
+                                                    <textarea class="form-control" id="elm1" name="isi">Jelaskan hal yang ingin dilaporkan</textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="lokasi" class="col-md-2 col-form-label">Lokasi</label>
+                                                <div class="col-md-10">
+                                                    <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
+                                                    <input class="form-control" type="text" name="lokasi" id="lokasi">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label class="col-md-2 col-form-label">Tanggal</label>
                                                 <div class="col-md-10">
-                                                    <input placeholder="Masukkan tanggal laporan" type="text" class="form-control datepicker-here" data-language="en" />
+                                                    <input placeholder="Masukkan tanggal laporan" type="date" class="form-control" name="tanggal" />
                                                 </div>
                                             </div>
 
@@ -117,7 +125,7 @@
                                                 <label class="col-md-2 col-form-label">Foto</label>
                                                 <div class="col-md-10">
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="validationCustomFile" required>
+                                                        <input type="file" name="foto" class="custom-file-input" id="validationCustomFile" required>
                                                         <label class="custom-file-label" for="validationCustomFile">Upload foto</label>
                                                     </div>
                                                 </div>
