@@ -17,25 +17,22 @@
                             </li>
 
                             <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-upload-alt"></i></div>
+                        
+                                    <span>Lapor</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="<?=base_url('Lapor/create'); ?>">Buat Laporan</a></li>
+                                    <li><a href="<?=base_url('Lapor'); ?>">Riwayat Laporan</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
                                 <a href="<?=base_url('Profil'); ?>" class="waves-effect">
                                     <div class="d-inline-block icons-sm mr-1"><i class="uim uim-cube"></i></div>
                                     <span>Profil</span>
                                 </a>
-                            </li>
-
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-sign-in-alt"></i></div>
-                        
-                                    <span>Authentication</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="auth-login.html">Login</a></li>
-                                    <li><a href="auth-register.html">Register</a></li>
-                                    <li><a href="auth-recoverpw.html">Recover Password</a></li>
-                                    <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                                </ul>
                             </li>
 
                         </ul>

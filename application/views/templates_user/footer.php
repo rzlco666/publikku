@@ -1,8 +1,33 @@
+    <style type="text/css">
+        .float{
+            position:fixed;
+            width:60px;
+            height:60px;
+            bottom:40px;
+            right:40px;
+            color:#FFF;
+            border-radius:50px;
+            background-color: #f96565;
+            text-align:center;
+            font-size:40px;
+            box-shadow: 2px 2px 3px #999;
+            z-index:100;
+            }
+
+        .my-float{
+            margin-top:16px;
+        }
+            </style>
+
+    <a href="https://api.whatsapp.com/send?phone=08817819040&text=Saya%20mau%20bertanya%20tentang" class="float" target="_blank">
+        <i class="mdi mdi-whatsapp my-float text-white"></i>
+    </a>
+
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                2021 © Desa Keden.
+                                <?php echo date('Y'); ?> © Desa Keden.
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-right d-none d-sm-block">
@@ -26,6 +51,34 @@
         <script src="<?=base_url('assets_user/'); ?>libs/node-waves/waves.min.js"></script>
 
         <script src="https://unicons.iconscout.com/release/v2.0.1/script/monochrome/bundle.js"></script>
+
+        <!-- Required datatable js -->
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/jszip/jszip.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/pdfmake/build/pdfmake.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/pdfmake/build/vfs_fonts.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+        <!-- Responsive examples -->
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+        <!-- Datatable init js -->
+        <script src="<?=base_url('assets_user/'); ?>js/pages/datatables.init.js"></script>
+
+        <!--tinymce js-->
+        <script src="<?=base_url('assets_user/'); ?>libs/tinymce/tinymce.min.js"></script>
+
+        <!--ck editor js-->
+        <script src="<?=base_url('assets_user/'); ?>libs/ckeditor4/ckeditor.js"></script>
+
+        <!-- init js -->
+        <script src="<?=base_url('assets_user/'); ?>js/pages/form-editor.init.js"></script>
 
         <!-- datepicker -->
         <script src="<?=base_url('assets_user/'); ?>libs/air-datepicker/js/datepicker.min.js"></script>

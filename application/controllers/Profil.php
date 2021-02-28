@@ -75,40 +75,24 @@ class Profil extends CI_Controller {
 
 	public function editf()
 	{
-		//cek image
-            $upload_image = $_FILES['image']['name'];
-
-            if ($upload_image) {
-                $config['image_library'] = 'gd2';
-                $config['allowed_types'] = 'jpeg|jpg|png';
-                $config['max_size'] = '2048';
-                $config['width'] = 400;
-                $config['height'] = 400;
-                $config['create_thumb'] = TRUE;
-                $config['maintain_ratio'] = TRUE;
-                $config['upload_path'] = './uploads/profil';
-
-                $this->load->library('upload', $config);
-                $this->load->library('image_lib', $config);
-                $this->image_lib->resize();
-
-                if ($this->upload->do_upload('image')) {
-
-                    $old_image = $data['user']['image'];
-
-                    if ($old_image != 'default.png') {
-                        unlink(FCPATH . 'uploads/profil' . $old_image);
-                    }
-                    $new_image = $this->upload->data('file_name');
-                    $id_user = $this->session->userdata('id_user');
-                    $data_u = array(
-			            'foto'=>$new_image
-			        );
-                    $this->db->update('user', $data_u, array('id_user' => $id_user));
-                } else {
-                    echo $this->upload->display_errors();
-                }
-            }
+        $config['upload_path']          = './uploads/profil/';
+        //$config['allowed_types']        = 'gif|jpg|png';
+        //$config['max_size']             = 100;
+        //$config['max_width']            = 1024;
+        //$config['max_height']           = 768;
+        //$config['encrypt_name']         = TRUE;
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('berkas'))
+        {
+                redirect('Dashboard');
+        }
+        else
+        {
+            $id_user = $this->session->userdata('id_user');
+            $data['foto'] = $this->upload->data("file_name");
+            $this->db->update('user', $data, array('id_user' => $id_user));
+            redirect('Profil');
+        }
 	}
 
 }

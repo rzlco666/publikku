@@ -67,10 +67,9 @@
                                             <?= form_open_multipart('Profil/editf'); ?>
 
                                             <div class="form-group row">
-                                                <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
-                                                <label for="foto" class="col-md-2 col-form-label">Foto</label>
+                                                <label for="berkas" class="col-md-2 col-form-label">Foto</label>
                                                 <div class="col-md-10">
-                                                    <input class="form-control" type="file" name="image" id="foto">
+                                                    <input class="form-control" type="file" name="berkas" id="berkas">
                                                 </div>
                                             </div>
 
