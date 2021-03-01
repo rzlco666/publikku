@@ -20,6 +20,46 @@ class Pengajuan extends CI_Model
         return $this->db->get_where($this->table, ["id_surat" => $id_surat])->row();
     }
 
+     public function getByTotal()
+    {
+        $this->db->select('id_surat, COUNT(id_surat) as total');
+        $query = $this->db->get($this->table);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
+    public function getByPeriksa()
+    {
+        $this->db->select('id_surat, COUNT(id_surat) as total');
+        $query = $this->db->get_where($this->table, ["status" => "Diperiksa"]);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
+    public function getBySelesai()
+    {
+        $this->db->select('id_surat, COUNT(id_surat) as total');
+        $query = $this->db->get_where($this->table, ["status" => "Selesai"]);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
+    public function getByProses()
+    {
+        $this->db->select('id_surat, COUNT(id_surat) as total');
+        $query = $this->db->get_where($this->table, ["status" => "Diproses"]);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
     public function save($data)
     {
         return $this->db->insert($this->table, $data);

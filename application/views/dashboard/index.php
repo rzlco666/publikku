@@ -64,31 +64,56 @@
                                         </div>
                                     </div>
                                     <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="header-title mb-4">Monthy sale Report</h5>
-                                            <div class="media">
-                                                <div class="media-body">
-                                                    <p class="text-muted mb-2">This month Sale</p>
-                                                    <h4>$ 13,425</h4>
-                                                </div>
-                                                <div dir="ltr" class="ml-2">
-                                                    <input data-plugin="knob" data-width="56" data-height="56" data-linecap=round data-displayInput=false
-                                                    data-fgColor="#f15959" value="56" data-skin="tron" data-angleOffset="56"
-                                                    data-readOnly=true data-thickness=".17" />
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="media">
-                                                <div class="media-body">
-                                                    <p class="text-muted">Sale status</p>
-                                                    <h5 class="mb-0"> + 12 % <span class="font-size-14 text-muted ml-1">From previous period</span></h5>
-                                                </div>
-
-                                                <div class="align-self-end ml-2">
-                                                    <a href="#" class="btn btn-primary btn-sm">View more</a>
-                                                </div>
-                                            </div>
+                                        <div class="card-header bg-transparent p-3">
+                                            <h5 class="header-title mb-0">Statistik Pelaporan</h5>
                                         </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="media my-2">
+                                                    
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Jumlah Total Laporan</p>
+                                                        <h5 class="mb-0"><?php echo $laporan->total; ?></h5>
+                                                    </div>
+                                                    <div class="icons-lg ml-2 align-self-center">
+                                                        <i class="uim uim-layer-group"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="media my-2">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Laporan Sedang Diperiksa</p>
+                                                        <h5 class="mb-0"><?php echo $laporan3->total; ?></h5>
+                                                    </div>
+                                                    <div class="icons-lg ml-2 align-self-center">
+                                                        <i class="uim uim-analytics"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="media my-2">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Laporan Sedang Diproses</p>
+                                                        <h5 class="mb-0"><?php echo $laporan2->total; ?></h5>
+                                                    </div>
+                                                    <div class="icons-lg ml-2 align-self-center">
+                                                        <i class="uim uim-ruler"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="media my-2">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Laporan Telah Selesai</p>
+                                                        <h5 class="mb-0"><?php echo $laporan4->total; ?></h5>
+                                                    </div>
+                                                    <div class="icons-lg ml-2 align-self-center">
+                                                        <i class="uim uim-box"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
         
@@ -142,6 +167,144 @@
         
                             </div>
                             <!-- end row -->
+
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <div class="card">
+                                        <div class="card-header bg-transparent p-3">
+                                            <h5 class="header-title mb-0">Statistik Pengajuan Surat</h5>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="media my-2">
+                                                    
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Jumlah Total Pengajuan Surat</p>
+                                                        <h5 class="mb-0"><?php echo $surat->total; ?></h5>
+                                                    </div>
+                                                    <div class="icons-lg ml-2 align-self-center">
+                                                        <i class="uim uim-layer-group"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="media my-2">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Pengajuan Surat Sedang Diperiksa</p>
+                                                        <h5 class="mb-0"><?php echo $surat3->total; ?></h5>
+                                                    </div>
+                                                    <div class="icons-lg ml-2 align-self-center">
+                                                        <i class="uim uim-analytics"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="media my-2">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Pengajuan Surat Sedang Diproses</p>
+                                                        <h5 class="mb-0"><?php echo $surat2->total; ?></h5>
+                                                    </div>
+                                                    <div class="icons-lg ml-2 align-self-center">
+                                                        <i class="uim uim-ruler"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="media my-2">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Pengajuan Surat Telah Selesai</p>
+                                                        <h5 class="mb-0"><?php echo $surat4->total; ?></h5>
+                                                    </div>
+                                                    <div class="icons-lg ml-2 align-self-center">
+                                                        <i class="uim uim-box"></i>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+        
+                                <div class="col-xl-8">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="header-title mb-4">Form Pengajuan Surat</h5>
+                                            <p class="card-title-desc">Desa Keden melayani pengajuan surat online dari masyarakat</p>
+                                            <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Surat/save">
+
+                                            <div class="form-group row">
+                                                <label class="col-md-2 col-form-label">Nama</label>
+                                                <div class="col-md-10">
+                                                    <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
+                                                    <input class="form-control" type="text" value="<?php echo $user->username; ?>" name="nama" id="nama">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="lokasi" class="col-md-2 col-form-label">NIK</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="nik" id="nik">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="lokasi" class="col-md-2 col-form-label">Alamat</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="text" value="<?php echo $user->alamat; ?>" name="alamat" id="alamat">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="lokasi" class="col-md-2 col-form-label">Email</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="text" value="<?php echo $user->email; ?>" name="email" id="email">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-md-2 col-form-label">Tanggal</label>
+                                                <div class="col-md-10">
+                                                    <input placeholder="Masukkan tanggal laporan" type="date" class="form-control" name="tanggal" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-md-2 col-form-label">Jenis Surat</label>
+                                                <div class="col-md-10">
+                                                    <select name="jenis" class="custom-select">
+                                                        <option disabled="disabled" selected>Pilih jenis surat</option>
+                                                        <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
+                                                        <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
+                                                        <option value="Surat Keterangan Miskin">Surat Keterangan Miskin</option>
+                                                        <option value="Surat Keterangan Belum Pernah Menikah">Surat Keterangan Belum Pernah Menikah</option>
+                                                        <option value="Surat Keterangan Kelahiran">Surat Keterangan Kelahiran</option>
+                                                        <option value="Surat Keterangan Kematian">Surat Keterangan Kematian</option>
+                                                        <option value="Surat Keterangan Beda Nama">Surat Keterangan Beda Nama</option>
+                                                        <option value="Surat Keterangan Penghasilan">Surat Keterangan Penghasilan</option>
+                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Harga Tanah</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-md-2 col-form-label">Pesan</label>
+                                                <div class="col-md-10">
+                                                    <textarea class="form-control" id="elm1" name="pesan">Silahkan isi keperluan atau keterangan lainnya disini</textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-4 text-right">
+                                                <a class="btn btn-outline-danger waves-effect waves-light" href="<?php echo base_url(); ?>Surat" class="btn btn-warning">Batal</a>
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit">Laporakan</button>
+                                            </div>
+
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            <!-- end row -->
+
                         </div> <!-- container-fluid -->
                     </div>
                     <!-- end page-content-wrapper -->

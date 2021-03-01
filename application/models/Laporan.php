@@ -20,6 +20,46 @@ class Laporan extends CI_Model
         return $this->db->get_where($this->table, ["id_fitur" => $id_fitur])->row();
     }
 
+    public function getByTotal()
+    {
+        $this->db->select('id_fitur, COUNT(id_fitur) as total');
+        $query = $this->db->get($this->table);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
+    public function getByPeriksa()
+    {
+        $this->db->select('id_fitur, COUNT(id_fitur) as total');
+        $query = $this->db->get_where($this->table, ["status" => "Diperiksa"]);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
+    public function getBySelesai()
+    {
+        $this->db->select('id_fitur, COUNT(id_fitur) as total');
+        $query = $this->db->get_where($this->table, ["status" => "Selesai"]);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
+    public function getByProses()
+    {
+        $this->db->select('id_fitur, COUNT(id_fitur) as total');
+        $query = $this->db->get_where($this->table, ["status" => "Diproses"]);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
     public function save($data)
     {
         return $this->db->insert($this->table, $data);
