@@ -56,8 +56,8 @@
                                     </div>
 
                                     <div class="col-5 ml-auto">
-                                        <div>
-                                            <img src="<?= base_url('assets_user/'); ?>images/widget-img.png" alt="" class="img-fluid">
+                                        <div class="text-right">
+                                            <img width="90" src="<?= base_url('assets_user/images/users/') . $user->foto ?>" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>

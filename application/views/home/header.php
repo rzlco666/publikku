@@ -76,7 +76,16 @@
         if(empty($this->session->userdata('is_login')))
         {
           ?>
-          <a href="<?=base_url('Auth/login'); ?>" class="get-started-btn ml-auto">Login</a>
+          <div class="dropdown ml-auto">
+            <button style="outline: none; border-style: none;" class="get-started-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Login
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="<?=base_url('Auth/login'); ?>">Pengguna</a>
+              <a class="dropdown-item" href="#">Admin</a>
+              <a class="dropdown-item" href="#">Kades</a>
+            </div>
+          </div>
           <a href="<?=base_url('Auth/daftar'); ?>" class="get-started-btn">Register</a>
       <?php
         }else{
