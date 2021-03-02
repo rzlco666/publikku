@@ -1,56 +1,55 @@
-<?php 
-class Authen extends CI_Model 
+<?php
+class Authen extends CI_Model
 {
 
-	public function __construct()
-	{
+    public function __construct()
+    {
         parent::__construct();
-	}
+    }
 
-	function register($email,$password,$username,$alamat,$KTP)
-	{
-		$data_user = array(
-			'email'=>$email,
-			'password'=>$password,
-			'username'=>$username,
-            'alamat'=>$alamat,
-            'KTP'=>$KTP
-		);
-		$this->db->insert('user',$data_user);
-	}
+    function register($email, $password, $username, $alamat, $KTP, $foto)
+    {
+        $foto = 'avatar-1.jpg';
 
-	function login_user($email,$password)
-	{
-        $query = $this->db->get_where('user',array('email'=>$email));
-        if($query->num_rows() > 0)
-        {
+        $data_user = array(
+            'email' => $email,
+            'password' => $password,
+            'username' => $username,
+            'alamat' => $alamat,
+            'KTP' => $KTP,
+            'foto' => $foto
+        );
+        $this->db->insert('user', $data_user);
+    }
+
+    function login_user($email, $password)
+    {
+        $query = $this->db->get_where('user', array('email' => $email));
+        if ($query->num_rows() > 0) {
             $data_user = $query->row();
             $hash = $query->row('password');
             if ($password == $data_user->password) {
-                $this->session->set_userdata('email',$email);
-				$this->session->set_userdata('username',$data_user->username);
-                $this->session->set_userdata('id_user',$data_user->id_user);
-                $this->session->set_userdata('alamat',$data_user->alamat);
-                $this->session->set_userdata('KTP',$data_user->KTP);
-                $this->session->set_userdata('password',$data_user->password);
-				$this->session->set_userdata('is_login',TRUE);
+                $this->session->set_userdata('email', $email);
+                $this->session->set_userdata('username', $data_user->username);
+                $this->session->set_userdata('id_user', $data_user->id_user);
+                $this->session->set_userdata('alamat', $data_user->alamat);
+                $this->session->set_userdata('KTP', $data_user->KTP);
+                $this->session->set_userdata('password', $data_user->password);
+                $this->session->set_userdata('is_login', TRUE);
                 return TRUE;
             } else {
                 return FALSE;
             }
-        }
-        else
-        {
+        } else {
             return FALSE;
         }
-	}
-	
+    }
+
     function cek_login()
     {
-        if(empty($this->session->userdata('is_login')))
-        {
-			redirect('Auth/login');
-		}
+        if (empty($this->session->userdata('is_login'))) {
+            redirect('Auth/login');
+        }
     }
 
     public function getById($id_user)
@@ -58,19 +57,17 @@ class Authen extends CI_Model
         $id_user = $this->session->userdata('id_user');
         return $this->db->get_where('user', ["id_user" => $id_user])->row();
     }
- 
-    public function update($email,$password,$username,$alamat,$KTP)
+
+    public function update($email, $password, $username, $alamat, $KTP)
     {
         $id_user = $this->session->userdata('id_user');
         $data_user = array(
-            'email'=>$email,
-            'password'=>$password,
-            'username'=>$username,
-            'alamat'=>$alamat,
-            'KTP'=>$KTP
+            'email' => $email,
+            'password' => $password,
+            'username' => $username,
+            'alamat' => $alamat,
+            'KTP' => $KTP
         );
         $this->db->update('user', $data_user, array('id_user' => $id_user));
     }
-
 }
-?>

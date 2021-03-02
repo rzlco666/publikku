@@ -20,13 +20,10 @@ class Auth extends CI_Controller
     {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
-        if($this->authen->login_user($email,$password))
-        {
+        if ($this->authen->login_user($email, $password)) {
             redirect('Dashboard');
-        }
-        else
-        {
-            $this->session->set_flashdata('error','Username & Password salah');
+        } else {
+            $this->session->set_flashdata('error', 'Username & Password salah');
             redirect('Auth/login');
         }
     }
@@ -50,26 +47,23 @@ class Auth extends CI_Controller
 
     public function proses_daftar()
     {
-        $this->form_validation->set_rules('email', 'email','trim|required|min_length[1]|max_length[255]|is_unique[user.email]');
-        $this->form_validation->set_rules('KTP', 'KTP','trim|required|min_length[1]|max_length[255]|is_unique[user.KTP]');
-        $this->form_validation->set_rules('password', 'password','trim|required|min_length[1]|max_length[255]');
-        $this->form_validation->set_rules('username', 'username','trim|required|min_length[1]|max_length[255]');
-        if ($this->form_validation->run()==true)
-        {
+        $this->form_validation->set_rules('email', 'email', 'trim|required|min_length[1]|max_length[255]|is_unique[user.email]');
+        $this->form_validation->set_rules('KTP', 'KTP', 'trim|required|min_length[1]|max_length[255]|is_unique[user.KTP]');
+        $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('username', 'username', 'trim|required|min_length[1]|max_length[255]');
+        if ($this->form_validation->run() == true) {
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $username = $this->input->post('username');
             $alamat = $this->input->post('alamat');
             $KTP = $this->input->post('KTP');
-            $this->authen->register($email,$password,$username,$alamat,$KTP);
-            $this->session->set_flashdata('success_register','Proses Pendaftaran User Berhasil');
+            $foto = 'avatar-1.jpg';
+            $this->authen->register($email, $password, $username, $alamat, $KTP, $foto);
+            $this->session->set_flashdata('success_register', 'Proses Pendaftaran User Berhasil');
             redirect('Auth/login');
-        }
-        else
-        {
+        } else {
             $this->session->set_flashdata('error', validation_errors());
             redirect('Auth/daftar');
         }
     }
-
 }
