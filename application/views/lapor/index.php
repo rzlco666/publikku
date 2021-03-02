@@ -27,6 +27,24 @@
             
                                             <p class="card-title-desc"><a class="btn btn-primary waves-effect waves-light" href="<?php echo base_url(); ?>Lapor/create/">Buat Laporan</a>
                                             </p>
+
+                                            <?php 
+                                                if($this->session->flashdata('error') !='')
+                                                {
+                                                    echo '<div class="alert alert-primary" role="alert">';
+                                                    echo $this->session->flashdata('error');
+                                                    echo '</div>';
+                                                }
+                                            ?>
+                             
+                                            <?php 
+                                                if($this->session->flashdata('success_ubah') !='')
+                                                {
+                                                    echo '<div class="alert alert-success" role="alert">';
+                                                    echo $this->session->flashdata('success_ubah');
+                                                    echo '</div>';
+                                                }
+                                            ?>
             
                                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>

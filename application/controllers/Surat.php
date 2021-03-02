@@ -52,10 +52,12 @@ class Surat extends CI_Controller
             $data['id_user'] = $this->input->post('id_user');
             $data['jenis'] = $this->input->post('jenis');
             $this->pengajuan->save($data);
+            $this->session->set_flashdata('success_ubah','Data Berhasil Ditambah');
             redirect('Surat');
         }
         else
         {
+            $this->session->set_flashdata('error', validation_errors());
             redirect('Surat/create');
         }
     }
@@ -79,10 +81,12 @@ class Surat extends CI_Controller
             $data['tanggal'] = $this->input->post('tanggal');
             $data['jenis'] = $this->input->post('jenis');
             $this->pengajuan->update($data,$id_surat);
+            $this->session->set_flashdata('success_ubah','Data Berhasil Diubah');
             redirect('Surat');
         }
         else
         {
+            $this->session->set_flashdata('error', validation_errors());
             redirect('Surat');
         }
     }
@@ -102,6 +106,7 @@ class Surat extends CI_Controller
     function delete($id_surat)
     {
         $this->pengajuan->delete($id_surat);
+        $this->session->set_flashdata('success_ubah','Data Berhasil Dihapus');
         redirect('Surat');
     }
 

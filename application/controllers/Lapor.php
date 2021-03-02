@@ -46,10 +46,12 @@ class Lapor extends CI_Controller
             $data['tanggal'] = $this->input->post('tanggal');
             $data['id_user'] = $this->input->post('id_user');
             $this->laporan->save($data);
+            $this->session->set_flashdata('success_ubah','Data Berhasil Ditambah');
             redirect('Lapor');
         }
         else
         {
+            $this->session->set_flashdata('error', validation_errors());
             redirect('Lapor/create');
         }
     }
@@ -66,10 +68,12 @@ class Lapor extends CI_Controller
             $data['lokasi'] = $this->input->post('lokasi');
             $data['tanggal'] = $this->input->post('tanggal');
             $this->laporan->update($data,$id_fitur);
+            $this->session->set_flashdata('success_ubah','Data Berhasil Diubah');
             redirect('Lapor');
         }
         else
         {
+            $this->session->set_flashdata('error', validation_errors());
             redirect('Lapor');
         }
     }
@@ -89,6 +93,7 @@ class Lapor extends CI_Controller
     function delete($id_fitur)
     {
         $this->laporan->delete($id_fitur);
+        $this->session->set_flashdata('success_ubah','Data Berhasil Dihapus');
         redirect('Lapor');
     }
 

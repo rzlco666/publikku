@@ -26,6 +26,16 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="header-title mb-4">Buat Laporan</h5>
+
+                                            <?php 
+                                                if($this->session->flashdata('error') !='')
+                                                {
+                                                    echo '<div class="alert alert-primary" role="alert">';
+                                                    echo $this->session->flashdata('error');
+                                                    echo '</div>';
+                                                }
+                                            ?>
+                                            
                                             <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Lapor/save">
 
                                             <div class="form-group row">

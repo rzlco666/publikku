@@ -27,6 +27,24 @@
             
                                             <p class="card-title-desc"><a class="btn btn-primary waves-effect waves-light" href="<?php echo base_url(); ?>Surat/create/">Buat Pengajuan Surat</a>
                                             </p>
+
+                                            <?php 
+                                                if($this->session->flashdata('error') !='')
+                                                {
+                                                    echo '<div class="alert alert-primary" role="alert">';
+                                                    echo $this->session->flashdata('error');
+                                                    echo '</div>';
+                                                }
+                                            ?>
+                             
+                                            <?php 
+                                                if($this->session->flashdata('success_ubah') !='')
+                                                {
+                                                    echo '<div class="alert alert-success" role="alert">';
+                                                    echo $this->session->flashdata('success_ubah');
+                                                    echo '</div>';
+                                                }
+                                            ?>
             
                                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
@@ -58,8 +76,18 @@
                                                     <td><?php echo $row->status; ?></td>
                                                     <td><?php echo $row->waktu_update; ?></td>
                                                     <td>
-                                                        <a href="<?php echo base_url(); ?>Surat/edit/<?php echo $row->id_surat; ?>" class="btn btn-danger">Edit</a>
-                                                        <a href="<?php echo base_url(); ?>Surat/delete/<?php echo $row->id_surat; ?>" class="btn btn-primary">Hapus</a>
+                                                        <?php 
+                                                        $stat = $row->status;
+                                                        if ($stat == "Selesai") {
+                                                            ?> <a href="<?php echo $row->link; ?>" target="_blank" class="btn btn-primary">Cetak Surat</a> <?php
+                                                        }elseif ($stat == "Diproses") {
+                                                            echo "Sedang diproses";
+                                                        }else{
+                                                            ?><a href="<?php echo base_url(); ?>Surat/edit/<?php echo $row->id_surat; ?>" class="btn btn-danger">Edit</a>
+                                                            <a href="<?php echo base_url(); ?>Surat/delete/<?php echo $row->id_surat; ?>" class="btn btn-primary">Hapus</a> <?php
+                                                        }
+
+                                                         ?>
                                                     </td>
                                                 </tr>
                                                 <?php
