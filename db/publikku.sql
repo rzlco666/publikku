@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Mar 2021 pada 09.55
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.1
+-- Generation Time: Mar 02, 2021 at 03:40 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 
 DELIMITER $$
 --
--- Prosedur
+-- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `backup_table` ()  BEGIN
 TRUNCATE TABLE backuppublikku.rating;
@@ -47,7 +47,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dinas`
+-- Table structure for table `dinas`
 --
 
 CREATE TABLE `dinas` (
@@ -56,7 +56,7 @@ CREATE TABLE `dinas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `dinas`
+-- Dumping data for table `dinas`
 --
 
 INSERT INTO `dinas` (`id_dinas`, `dinas`) VALUES
@@ -68,7 +68,7 @@ INSERT INTO `dinas` (`id_dinas`, `dinas`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `fitur`
+-- Table structure for table `fitur`
 --
 
 CREATE TABLE `fitur` (
@@ -81,7 +81,7 @@ CREATE TABLE `fitur` (
   `id_dinas` int(11) NOT NULL,
   `foto` varchar(255) NOT NULL DEFAULT 'default.png',
   `id_kategori` int(11) NOT NULL,
-  `waktu_update` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `waktu_update` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `rating` int(11) NOT NULL,
   `feedback` text NOT NULL,
   `id` int(11) NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE `fitur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `fitur`
+-- Dumping data for table `fitur`
 --
 
 INSERT INTO `fitur` (`id_fitur`, `isi_lapor`, `lokasi`, `status`, `deskripsi`, `tanggal`, `id_dinas`, `foto`, `id_kategori`, `waktu_update`, `rating`, `feedback`, `id`, `id_user`, `id_ins`) VALUES
@@ -99,10 +99,11 @@ INSERT INTO `fitur` (`id_fitur`, `isi_lapor`, `lokasi`, `status`, `deskripsi`, `
 (44, 'Test 123', 'Desa Keden', 'Selesai', 'Langsung ke lokasi', '2021-02-27', 1, 'default.png', 1, '2021-03-02 14:29:59', 5, '<p>Pelayanan sangat bagus, saya puas</p>', 0, 24, 1),
 (51, '<p>Percobaan 2</p>', 'Keden', 'Selesai', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:45:38', 0, '', 0, 24, 0),
 (52, '<p>Jalan disini rusak</p>', 'Desan Keden Wetan', 'Diproses', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:00:18', 0, '', 0, 24, 0),
-(53, '<p>Test edit</p>', 'Solo', 'Diperiksa', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:51:18', 0, '', 0, 24, 0);
+(53, '<p>Test edit</p>', 'Solo', 'Diperiksa', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:51:18', 0, '', 0, 24, 0),
+(58, '<p>Bismillah</p>', 'Sukabirus 2s', 'Diperiksa', 'Menunggu diperiksa', '2021-03-02', 0, 'NV.jpg', 0, '2021-03-02 21:35:17', 0, '', 0, 24, 0);
 
 --
--- Trigger `fitur`
+-- Triggers `fitur`
 --
 DELIMITER $$
 CREATE TRIGGER `before_notifikasi_pelaporan_update` BEFORE UPDATE ON `fitur` FOR EACH ROW BEGIN
@@ -117,7 +118,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `instansi`
+-- Table structure for table `instansi`
 --
 
 CREATE TABLE `instansi` (
@@ -131,7 +132,7 @@ CREATE TABLE `instansi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `instansi`
+-- Dumping data for table `instansi`
 --
 
 INSERT INTO `instansi` (`id_ins`, `username_ins`, `email_ins`, `password_ins`, `dinas`, `deskripsi`, `id_dinas`) VALUES
@@ -142,7 +143,7 @@ INSERT INTO `instansi` (`id_ins`, `username_ins`, `email_ins`, `password_ins`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -151,7 +152,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
@@ -165,30 +166,32 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `notifikasi`
+-- Table structure for table `notifikasi`
 --
 
 CREATE TABLE `notifikasi` (
   `id_notif` int(11) NOT NULL,
   `id_receiver` int(11) NOT NULL,
   `statuss` text NOT NULL,
-  `tanggal` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `jenis` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `notifikasi`
+-- Dumping data for table `notifikasi`
 --
 
 INSERT INTO `notifikasi` (`id_notif`, `id_receiver`, `statuss`, `tanggal`, `jenis`) VALUES
 (3, 24, 'Update Pelaporan Diproses', '2021-03-02 15:00:18', 'Pelaporan'),
 (4, 24, 'Update Pengajuan Diproses', '2021-03-02 15:40:48', 'Pengajuan'),
-(5, 24, 'Update Pelaporan Selesai', '2021-03-02 15:45:38', 'Pelaporan');
+(5, 24, 'Update Pelaporan Selesai', '2021-03-02 15:45:38', 'Pelaporan'),
+(6, 24, 'Update Pelaporan Diperiksa', '2021-03-02 21:34:12', 'Pelaporan'),
+(7, 24, 'Update Pelaporan Diperiksa', '2021-03-02 21:35:17', 'Pelaporan');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rating`
+-- Table structure for table `rating`
 --
 
 CREATE TABLE `rating` (
@@ -201,7 +204,7 @@ CREATE TABLE `rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `rating`
+-- Dumping data for table `rating`
 --
 
 INSERT INTO `rating` (`id_rate`, `rating`, `feedback`, `deskripsi`, `id_user`, `id_ins`) VALUES
@@ -211,7 +214,7 @@ INSERT INTO `rating` (`id_rate`, `rating`, `feedback`, `deskripsi`, `id_user`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `register`
+-- Table structure for table `register`
 --
 
 CREATE TABLE `register` (
@@ -222,7 +225,7 @@ CREATE TABLE `register` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `register`
+-- Dumping data for table `register`
 --
 
 INSERT INTO `register` (`id`, `username`, `email`, `password`) VALUES
@@ -234,7 +237,7 @@ INSERT INTO `register` (`id`, `username`, `email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat`
+-- Table structure for table `surat`
 --
 
 CREATE TABLE `surat` (
@@ -248,12 +251,12 @@ CREATE TABLE `surat` (
   `pesan` text NOT NULL,
   `status` varchar(100) NOT NULL,
   `link` text NOT NULL,
-  `waktu_update` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `waktu_update` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `surat`
+-- Dumping data for table `surat`
 --
 
 INSERT INTO `surat` (`id_surat`, `nama`, `nik`, `email`, `alamat`, `tanggal`, `jenis`, `pesan`, `status`, `link`, `waktu_update`, `id_user`) VALUES
@@ -263,7 +266,7 @@ INSERT INTO `surat` (`id_surat`, `nama`, `nik`, `email`, `alamat`, `tanggal`, `j
 (6, 'Syahrizal Hanif', '124', 'syahrizalhanif@gmail.com', 'Desa Keden', '2021-03-02', 'Surat Keterangan Kematian', '<p>Test untuk edit</p>', 'Diperiksa', '', '2021-03-02 15:51:53', 24);
 
 --
--- Trigger `surat`
+-- Triggers `surat`
 --
 DELIMITER $$
 CREATE TRIGGER `before_notifikasi_pengajuan_update` BEFORE UPDATE ON `surat` FOR EACH ROW BEGIN
@@ -278,7 +281,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -293,32 +296,32 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `alamat`, `email`, `KTP`, `foto`, `status`) VALUES
-(1, 'Daeng', '', '', '', 0, 'default.png', '2'),
-(3, 'baskoro', '123', 'Bandung', 'bas@mail.com', 2222, 'default.png', '1'),
-(4, 'Ujang', '123', 'Jawa', 'ujang@mail.com', 66, 'default.png', ''),
-(8, 'coba', '123', '', 'coba@gmail.cpm', 0, 'default.png', ''),
-(9, 'fikri', '1234', 'sitiadi', 'fhaikal844@gmail.com', 111, 'default.png', ''),
-(10, 'siska', 'siska1', 'puring', 'siska@gmail.com', 1212, 'default.png', ''),
-(13, 'haikal', 'fikrihaikal11', 'sitiadi', 'fhaikal@gmail.com', 1234522, 'default.png', ''),
-(14, 'bayu', 'bayu11', 'klaten', 'bayu88@gmail.com', 4444, 'default.png', ''),
-(24, 'Syahrizal Hanif', '123456', 'Desa Keden', 'syahrizalhanif@gmail.com', 124, '', '');
+(1, 'Daeng', '', '', '', 0, 'ferdy-dataset_plotting1.png', '2'),
+(3, 'baskoro', '123', 'Bandung', 'bas@mail.com', 2222, 'ferdy-dataset_plotting1.png', '1'),
+(4, 'Ujang', '123', 'Jawa', 'ujang@mail.com', 66, 'ferdy-dataset_plotting1.png', ''),
+(8, 'coba', '123', '', 'coba@gmail.cpm', 0, 'ferdy-dataset_plotting1.png', ''),
+(9, 'fikri', '1234', 'sitiadi', 'fhaikal844@gmail.com', 111, 'ferdy-dataset_plotting1.png', ''),
+(10, 'siska', 'siska1', 'puring', 'siska@gmail.com', 1212, 'ferdy-dataset_plotting1.png', ''),
+(13, 'haikal', 'fikrihaikal11', 'sitiadi', 'fhaikal@gmail.com', 1234522, 'ferdy-dataset_plotting1.png', ''),
+(14, 'bayu', 'bayu11', 'klaten', 'bayu88@gmail.com', 4444, 'ferdy-dataset_plotting1.png', ''),
+(24, 'Syahrizal Hanif', '123456', 'Desa Keden', 'syahrizalhanif@gmail.com', 124, 'kang_sayur.png', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `dinas`
+-- Indexes for table `dinas`
 --
 ALTER TABLE `dinas`
   ADD PRIMARY KEY (`id_dinas`);
 
 --
--- Indeks untuk tabel `fitur`
+-- Indexes for table `fitur`
 --
 ALTER TABLE `fitur`
   ADD PRIMARY KEY (`id_fitur`),
@@ -327,120 +330,120 @@ ALTER TABLE `fitur`
   ADD KEY `id` (`id`);
 
 --
--- Indeks untuk tabel `instansi`
+-- Indexes for table `instansi`
 --
 ALTER TABLE `instansi`
   ADD PRIMARY KEY (`id_ins`),
   ADD KEY `id_dinas` (`id_dinas`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `notifikasi`
+-- Indexes for table `notifikasi`
 --
 ALTER TABLE `notifikasi`
   ADD PRIMARY KEY (`id_notif`);
 
 --
--- Indeks untuk tabel `rating`
+-- Indexes for table `rating`
 --
 ALTER TABLE `rating`
   ADD PRIMARY KEY (`id_rate`),
   ADD KEY `id_user` (`id_user`,`id_ins`);
 
 --
--- Indeks untuk tabel `register`
+-- Indexes for table `register`
 --
 ALTER TABLE `register`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `surat`
+-- Indexes for table `surat`
 --
 ALTER TABLE `surat`
   ADD PRIMARY KEY (`id_surat`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `dinas`
+-- AUTO_INCREMENT for table `dinas`
 --
 ALTER TABLE `dinas`
   MODIFY `id_dinas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `fitur`
+-- AUTO_INCREMENT for table `fitur`
 --
 ALTER TABLE `fitur`
-  MODIFY `id_fitur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_fitur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT untuk tabel `instansi`
+-- AUTO_INCREMENT for table `instansi`
 --
 ALTER TABLE `instansi`
   MODIFY `id_ins` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `notifikasi`
+-- AUTO_INCREMENT for table `notifikasi`
 --
 ALTER TABLE `notifikasi`
-  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `rating`
+-- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
   MODIFY `id_rate` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT untuk tabel `register`
+-- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `surat`
+-- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
   MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `instansi`
+-- Constraints for table `instansi`
 --
 ALTER TABLE `instansi`
   ADD CONSTRAINT `instansi_ibfk_1` FOREIGN KEY (`id_dinas`) REFERENCES `dinas` (`id_dinas`);
 
 DELIMITER $$
 --
--- Event
+-- Events
 --
 CREATE DEFINER=`root`@`localhost` EVENT `event_backup_table` ON SCHEDULE EVERY 1 MINUTE STARTS '2020-04-13 20:02:34' ON COMPLETION NOT PRESERVE ENABLE DO CALL backup_table()$$
 
