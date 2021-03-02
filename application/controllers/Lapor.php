@@ -15,6 +15,7 @@ class Lapor extends CI_Controller
     {
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
         $data['laporan'] = $this->laporan->getAll();
         $this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');
@@ -26,6 +27,7 @@ class Lapor extends CI_Controller
     {
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
         $this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');
         $this->load->view('lapor/create',$data);
@@ -82,6 +84,7 @@ class Lapor extends CI_Controller
     {
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
         $data['lapor'] = $this->laporan->getById($id_fitur);
         $this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');

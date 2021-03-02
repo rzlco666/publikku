@@ -65,7 +65,7 @@
                                                 <div class="col-md-10">
                                                     <div class="custom-file">
                                                         <input type="file" name="foto" class="custom-file-input" id="validationCustomFile" required>
-                                                        <label class="custom-file-label" for="validationCustomFile">Upload foto</label>
+                                                        <label class="custom-file-label" for="validationCustomFile">Upload bukti foto</label>
                                                     </div>
                                                 </div>
                                             </div>

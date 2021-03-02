@@ -70,9 +70,20 @@ class Laporan extends CI_Model
         return $this->db->update($this->table, $data, array('id_fitur' => $id_fitur));
     }
 
+    public function update_rating($data,$id_fitur)
+    {
+        return $this->db->update($this->table, $data, array('id_fitur' => $id_fitur));
+    }
+
      public function delete($id_fitur)
     {
         return $this->db->delete($this->table, array("id_fitur" => $id_fitur));
+    }
+
+    public function getAllNotif()
+    {
+        $id_user = $this->session->userdata('id_user');
+        return $this->db->get_where("notifikasi", ["id_receiver" => $id_user])->result();
     }
 
 }

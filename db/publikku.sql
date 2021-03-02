@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Feb 2021 pada 13.55
+-- Waktu pembuatan: 02 Mar 2021 pada 09.55
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.1
 
@@ -82,6 +82,8 @@ CREATE TABLE `fitur` (
   `foto` varchar(255) NOT NULL DEFAULT 'default.png',
   `id_kategori` int(11) NOT NULL,
   `waktu_update` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `rating` int(11) NOT NULL,
+  `feedback` text NOT NULL,
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_ins` int(11) NOT NULL
@@ -91,10 +93,26 @@ CREATE TABLE `fitur` (
 -- Dumping data untuk tabel `fitur`
 --
 
-INSERT INTO `fitur` (`id_fitur`, `isi_lapor`, `lokasi`, `status`, `deskripsi`, `tanggal`, `id_dinas`, `foto`, `id_kategori`, `waktu_update`, `id`, `id_user`, `id_ins`) VALUES
-(40, '  <p>percobaan</p>  ', 'klaten', 'Proses', 'sedang mengerjakan pelaporan atau menindak laanjuti', '2020-05-01', 1, 'tawuran_sekolah1.jpg', 6, '2020-11-13 22:22:22', 0, 0, 0),
-(43, '<p>percobaan 3</p>', 'klaten', 'Ditolak', 'langsung ke lokasi', '2020-05-05', 2, 'kbkarn1.jpg', 1, '2020-11-13 22:15:40', 0, 0, 0),
-(44, 'Test 123', 'Desa Keden', 'Diperiksa', 'Langsung ke lokasi', '2021-02-27', 1, 'default.png', 1, '2021-02-27 20:17:01', 0, 24, 1);
+INSERT INTO `fitur` (`id_fitur`, `isi_lapor`, `lokasi`, `status`, `deskripsi`, `tanggal`, `id_dinas`, `foto`, `id_kategori`, `waktu_update`, `rating`, `feedback`, `id`, `id_user`, `id_ins`) VALUES
+(40, '  <p>percobaan</p>  ', 'klaten', 'Diproses', 'sedang mengerjakan pelaporan atau menindak laanjuti', '2020-05-01', 1, 'tawuran_sekolah1.jpg', 6, '2021-03-02 10:48:02', 0, '', 0, 0, 0),
+(43, '<p>percobaan 3</p>', 'klaten', 'Ditolak', 'langsung ke lokasi', '2020-05-05', 2, 'kbkarn1.jpg', 1, '2021-03-02 10:48:08', 0, '', 0, 0, 0),
+(44, 'Test 123', 'Desa Keden', 'Selesai', 'Langsung ke lokasi', '2021-02-27', 1, 'default.png', 1, '2021-03-02 14:29:59', 5, '<p>Pelayanan sangat bagus, saya puas</p>', 0, 24, 1),
+(51, '<p>Percobaan 2</p>', 'Keden', 'Selesai', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:45:38', 0, '', 0, 24, 0),
+(52, '<p>Jalan disini rusak</p>', 'Desan Keden Wetan', 'Diproses', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:00:18', 0, '', 0, 24, 0),
+(53, '<p>Test edit</p>', 'Solo', 'Diperiksa', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:51:18', 0, '', 0, 24, 0);
+
+--
+-- Trigger `fitur`
+--
+DELIMITER $$
+CREATE TRIGGER `before_notifikasi_pelaporan_update` BEFORE UPDATE ON `fitur` FOR EACH ROW BEGIN
+    INSERT INTO notifikasi
+    set id_receiver = OLD.id_user,
+    statuss = CONCAT('Update Pelaporan ',NEW.status),
+    jenis = 'Pelaporan'; 
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -152,12 +170,20 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 
 CREATE TABLE `notifikasi` (
   `id_notif` int(11) NOT NULL,
-  `id_fitur` int(11) NOT NULL,
-  `status` varchar(255) NOT NULL,
-  `tanggal` datetime NOT NULL,
-  `id_ins` int(11) NOT NULL,
-  `notif` int(11) NOT NULL
+  `id_receiver` int(11) NOT NULL,
+  `statuss` text NOT NULL,
+  `tanggal` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `jenis` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `notifikasi`
+--
+
+INSERT INTO `notifikasi` (`id_notif`, `id_receiver`, `statuss`, `tanggal`, `jenis`) VALUES
+(3, 24, 'Update Pelaporan Diproses', '2021-03-02 15:00:18', 'Pelaporan'),
+(4, 24, 'Update Pengajuan Diproses', '2021-03-02 15:40:48', 'Pengajuan'),
+(5, 24, 'Update Pelaporan Selesai', '2021-03-02 15:45:38', 'Pelaporan');
 
 -- --------------------------------------------------------
 
@@ -221,6 +247,7 @@ CREATE TABLE `surat` (
   `jenis` text NOT NULL,
   `pesan` text NOT NULL,
   `status` varchar(100) NOT NULL,
+  `link` text NOT NULL,
   `waktu_update` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -229,8 +256,24 @@ CREATE TABLE `surat` (
 -- Dumping data untuk tabel `surat`
 --
 
-INSERT INTO `surat` (`id_surat`, `nama`, `nik`, `email`, `alamat`, `tanggal`, `jenis`, `pesan`, `status`, `waktu_update`, `id_user`) VALUES
-(1, 'Syahrizal Hanif', '124', 'syahrizalhanif@gmail.com', 'Desa Keden', '2021-02-28', 'Surat Keterangan Penghasilan', '<p>Mau buat usaha2</p>', 'Diperiksa', '2021-02-28 19:49:45', 24);
+INSERT INTO `surat` (`id_surat`, `nama`, `nik`, `email`, `alamat`, `tanggal`, `jenis`, `pesan`, `status`, `link`, `waktu_update`, `id_user`) VALUES
+(1, 'Syahrizal Hanif', '124', 'syahrizalhanif@gmail.com', 'Desa Keden', '2021-02-28', 'Surat Keterangan Penghasilan', '<p>Mau buat usaha2</p>', 'Selesai', 'https://www.google.com', '2021-03-02 01:23:11', 24),
+(4, 'Syahrizal Hanif', '124', 'syahrizalhanif@gmail.com', 'Desa Keden', '2021-03-02', 'Surat Keterangan Tidak Mampu', 'Silahkan isi keperluan atau keterangan lainnya disini123', 'Diproses', '', '2021-03-02 01:32:13', 24),
+(5, 'Syahrizal Hanif', '124', 'syahrizalhanif@gmail.com', 'Desa Keden', '2021-03-02', 'Surat Keterangan Beda Nama', '<p>Percobaan 2</p>', 'Diproses', '', '2021-03-02 15:40:48', 24),
+(6, 'Syahrizal Hanif', '124', 'syahrizalhanif@gmail.com', 'Desa Keden', '2021-03-02', 'Surat Keterangan Kematian', '<p>Test untuk edit</p>', 'Diperiksa', '', '2021-03-02 15:51:53', 24);
+
+--
+-- Trigger `surat`
+--
+DELIMITER $$
+CREATE TRIGGER `before_notifikasi_pengajuan_update` BEFORE UPDATE ON `surat` FOR EACH ROW BEGIN
+    INSERT INTO notifikasi
+    set id_receiver = OLD.id_user,
+    statuss = CONCAT('Update Pengajuan ',NEW.status),
+    jenis = 'Pengajuan'; 
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -341,7 +384,7 @@ ALTER TABLE `dinas`
 -- AUTO_INCREMENT untuk tabel `fitur`
 --
 ALTER TABLE `fitur`
-  MODIFY `id_fitur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_fitur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT untuk tabel `instansi`
@@ -359,7 +402,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `notifikasi`
 --
 ALTER TABLE `notifikasi`
-  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `rating`
@@ -377,7 +420,7 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT untuk tabel `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

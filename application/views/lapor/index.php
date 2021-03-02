@@ -83,9 +83,9 @@
                                                         <?php 
                                                         $stat = $row->status;
                                                         if ($stat == "Selesai") {
-                                                            ?> <a href="<?php echo base_url(); ?>Rating/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Beri Rating</a> <?php
+                                                            ?> <a href="<?php echo base_url(); ?>Rating/edit/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Beri Rating</a> <?php
                                                         }elseif ($stat == "Diproses") {
-                                                            echo "Sedang diproses";
+                                                            echo "Sedang Diproses";
                                                         }else{
                                                             ?><a href="<?php echo base_url(); ?>Lapor/edit/<?php echo $row->id_fitur; ?>" class="btn btn-danger">Edit</a>
                                                              <a href="<?php echo base_url(); ?>Lapor/delete/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Hapus</a> <?php
@@ -97,7 +97,13 @@
                                                         <?php 
                                                         $rat = $row->status;
                                                         if ($rat == "Selesai") {
-                                                            ?> <input type="hidden" class="rating" data-filled="mdi mdi-star text-primary" data-empty="mdi mdi-star-outline text-muted" data-readonly value="<?php echo $row->rating; ?>"/> <?php
+                                                            $rati = $row->rating;
+                                                            if ($rati > 0) {
+                                                                ?> <input type="hidden" class="rating" data-filled="mdi mdi-star text-primary" data-empty="mdi mdi-star-outline text-muted" data-readonly value="<?php echo $row->rating; ?>"/> 
+                                                                <?php
+                                                            }else{
+                                                                echo "Belum diberi rating";
+                                                            }
                                                         }else{
                                                             echo "Sedang ";echo $row->status;
                                                         }

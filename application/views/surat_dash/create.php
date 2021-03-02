@@ -101,7 +101,7 @@
 
                                             <div class="mt-4 text-right">
                                                 <a class="btn btn-outline-danger waves-effect waves-light" href="<?php echo base_url(); ?>Surat" class="btn btn-warning">Batal</a>
-                                                <button class="btn btn-primary waves-effect waves-light" type="submit">Laporakan</button>
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit">Ajukan</button>
                                             </div>
 
                                         </form>

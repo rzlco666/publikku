@@ -5,5 +5,5 @@
 5. Statistik laporan (Sudah)
 6. Print surat (input manual) (Sudah)
 7. Whatsapp (Sudah)
-8. Rating
+8. Rating (Sudah)
 9. Notifikasi

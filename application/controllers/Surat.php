@@ -7,6 +7,7 @@ class Surat extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('authen');
+        $this->load->model('laporan');
         $this->load->model('pengajuan');
 		$this->authen->cek_login();
 	}
@@ -15,6 +16,7 @@ class Surat extends CI_Controller
     {
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
         $data['surat'] = $this->pengajuan->getAll();
         $this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');
@@ -26,6 +28,7 @@ class Surat extends CI_Controller
     {
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
         $this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');
         $this->load->view('surat_dash/create',$data);
@@ -95,6 +98,7 @@ class Surat extends CI_Controller
     {
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
         $data['surat'] = $this->pengajuan->getById($id_surat);
         $this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');

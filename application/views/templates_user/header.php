@@ -107,6 +107,41 @@
                         </div>
 
                         <div class="dropdown d-inline-block">
+                            <button type="button" class="btn header-item noti-icon" id="page-header-flag-dropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a href="#"><i class="mdi mdi-bell"></i></a>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated">
+
+                                <?php 
+                                    $no = 1;
+                                    foreach($notifikasi as $row)
+                                    {
+                                        $lapo = $row->jenis;
+                                        if ($lapo == "Pelaporan") {
+                                            ?>
+                                                <!-- item-->
+                                                <a href="<?=base_url('Lapor'); ?>" class="dropdown-item">
+                                                    <i class="mr-2 uim uim-upload-alt"></i><span class="align-middle"> <?php echo $row->statuss; ?></span>
+                                                </a>
+                                            <?php
+                                        }else{
+                                            ?>
+                                                <!-- item-->
+                                                <a href="<?=base_url('Surat'); ?>" class="dropdown-item">
+                                                    <i class="mr-2 uim uim-document-layout-left"></i><span class="align-middle"> <?php echo $row->statuss; ?></span>
+                                                </a>
+                                            <?php
+                                        }
+                                            ?>
+                                <?php  
+                                    }
+                                ?>
+
+                            </div>
+                        </div>
+
+                        <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img class="rounded-circle header-profile-user" src="<?=base_url('assets_user/'); ?>images/users/avatar-1.jpg" alt="Header Avatar">
                                 <span class="d-none d-sm-inline-block ml-1"><?php echo $user->username; ?></span>

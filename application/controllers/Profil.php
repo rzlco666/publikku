@@ -7,6 +7,7 @@ class Profil extends CI_Controller {
     {
         parent::__construct();
 		$this->load->model('authen');
+        $this->load->model('laporan');
 		$this->authen->cek_login();
         $this->load->library('form_validation');
     }
@@ -15,6 +16,7 @@ class Profil extends CI_Controller {
 	{
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
 		$this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');
         $this->load->view('profil/index',$data);
@@ -25,6 +27,7 @@ class Profil extends CI_Controller {
 	{
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
 		$this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');
 		$this->load->view('profil/edit',$data);
@@ -55,6 +58,7 @@ class Profil extends CI_Controller {
 		{
 			$id_user = $this->input->post('id_user');
 			$data['user'] = $this->authen->getById($id_user);
+            $data['notifikasi'] = $this->laporan->getAllNotif();
 			$this->session->set_flashdata('error', validation_errors());
 			$this->load->view('templates_user/header',$data);
         	$this->load->view('templates_user/sidebar');
@@ -67,6 +71,7 @@ class Profil extends CI_Controller {
 	{
 		$id_user = $this->session->userdata('id_user');
 		$data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
 		$this->load->view('templates_user/header',$data);
         $this->load->view('templates_user/sidebar');
 		$this->load->view('profil/upload',$data);
