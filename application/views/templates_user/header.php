@@ -10,6 +10,9 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?=base_url('assets/'); ?>img/klaten333.ico">
 
+        <!-- Bootstrap Rating css -->
+        <link href="<?=base_url('assets_user/'); ?>libs/bootstrap-rating/bootstrap-rating.css" rel="stylesheet" type="text/css" />
+
         <!-- datepicker -->
         <link href="<?=base_url('assets_user/'); ?>libs/air-datepicker/css/datepicker.min.css" rel="stylesheet" type="text/css" />
 

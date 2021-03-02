@@ -58,6 +58,8 @@
                                                     <th>Waktu Update</th>
                                                     <th>Foto</th>
                                                     <th>Aksi</th>
+                                                    <th>Rating</th>
+                                                    <th>Feedback</th>
                                                 </tr>
                                                 </thead>
             
@@ -78,8 +80,38 @@
                                                     <td><?php echo $row->waktu_update; ?></td>
                                                     <td><?php echo $row->foto; ?></td>
                                                     <td>
-                                                        <a href="<?php echo base_url(); ?>Lapor/edit/<?php echo $row->id_fitur; ?>" class="btn btn-danger">Edit</a>
-                                                        <a href="<?php echo base_url(); ?>Lapor/delete/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Hapus</a>
+                                                        <?php 
+                                                        $stat = $row->status;
+                                                        if ($stat == "Selesai") {
+                                                            ?> <a href="<?php echo base_url(); ?>Rating/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Beri Rating</a> <?php
+                                                        }elseif ($stat == "Diproses") {
+                                                            echo "Sedang diproses";
+                                                        }else{
+                                                            ?><a href="<?php echo base_url(); ?>Lapor/edit/<?php echo $row->id_fitur; ?>" class="btn btn-danger">Edit</a>
+                                                             <a href="<?php echo base_url(); ?>Lapor/delete/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Hapus</a> <?php
+                                                        }
+
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php 
+                                                        $rat = $row->status;
+                                                        if ($rat == "Selesai") {
+                                                            ?> <input type="hidden" class="rating" data-filled="mdi mdi-star text-primary" data-empty="mdi mdi-star-outline text-muted" data-readonly value="<?php echo $row->rating; ?>"/> <?php
+                                                        }else{
+                                                            echo "Sedang ";echo $row->status;
+                                                        }
+                                                        ?>       
+                                                    </td>
+                                                    <td>
+                                                        <?php 
+                                                        $feed = $row->status;
+                                                        if ($feed == "Selesai") {
+                                                            echo $row->feedback;
+                                                        }else{
+                                                            echo "Sedang ";echo $row->status;
+                                                        }
+                                                        ?>        
                                                     </td>
                                                 </tr>
                                                 <?php

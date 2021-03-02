@@ -52,6 +52,9 @@
 
         <script src="https://unicons.iconscout.com/release/v2.0.1/script/monochrome/bundle.js"></script>
 
+        <!-- Bootstrap rating js -->
+        <script src="<?=base_url('assets_user/'); ?>libs/bootstrap-rating/bootstrap-rating.min.js"></script>
+
         <!-- Required datatable js -->
         <script src="<?=base_url('assets_user/'); ?>libs/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="<?=base_url('assets_user/'); ?>libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
