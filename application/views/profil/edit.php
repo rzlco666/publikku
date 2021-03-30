@@ -33,14 +33,14 @@
                                              <p class="card-text">
                                              <table>
                                                  <tr>
-                                                     <td>Alamat</td>
-                                                     <td>:</td>
-                                                     <td><?php echo $user->alamat; ?></td>
-                                                 </tr>
-                                                 <tr>
                                                      <td>NIK (KTP)</td>
                                                      <td>:</td>
                                                      <td><?php echo $user->KTP; ?></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>Alamat</td>
+                                                     <td>:</td>
+                                                     <td><?php echo $user->alamat; ?></td>
                                                  </tr>
                                                  <tr>
                                                      <td>No HP</td>
@@ -66,6 +66,13 @@
                                  <h5 class="header-title mb-4">Update Profil</h5>
                                  <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Profil/update">
 
+                                    <div class="form-group row">
+                                         <label for="KTP" class="col-md-2 col-form-label">NIK (KTP)</label>
+                                         <div class="col-md-10">
+                                             <input class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="KTP" id="KTP">
+                                         </div>
+                                     </div>
+                                    
                                      <div class="form-group row">
                                          <label for="username" class="col-md-2 col-form-label">Nama</label>
                                          <div class="col-md-10">
@@ -78,13 +85,6 @@
                                          <label for="alamat" class="col-md-2 col-form-label">Alamat</label>
                                          <div class="col-md-10">
                                              <input class="form-control" type="text" value="<?php echo $user->alamat; ?>" name="alamat" id="alamat">
-                                         </div>
-                                     </div>
-
-                                     <div class="form-group row">
-                                         <label for="KTP" class="col-md-2 col-form-label">NIK (KTP)</label>
-                                         <div class="col-md-10">
-                                             <input class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="KTP" id="KTP">
                                          </div>
                                      </div>
 

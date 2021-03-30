@@ -32,15 +32,15 @@
                                              <h4 class="card-title font-size-16 mt-0 text-center"><?php echo $user->username; ?></h4>
                                              <p class="card-text">
                                              <table>
+                                                <tr>
+                                                     <td>NIK (KTP)</td>
+                                                     <td>:</td>
+                                                     <td><?php echo $user->KTP; ?></td>
+                                                 </tr>
                                                  <tr>
                                                      <td>Alamat</td>
                                                      <td>:</td>
                                                      <td><?php echo $user->alamat; ?></td>
-                                                 </tr>
-                                                 <tr>
-                                                     <td>NIK (KTP)</td>
-                                                     <td>:</td>
-                                                     <td><?php echo $user->KTP; ?></td>
                                                  </tr>
                                                  <tr>
                                                      <td>No HP</td>

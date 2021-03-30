@@ -51,18 +51,18 @@
                                      </div>
 
                                      <div class="form-group row">
-                                         <label class="col-md-2 col-form-label">Foto</label>
+                                         <label class="col-md-2 col-form-label">Foto atau Video</label>
                                          <div class="col-md-10">
                                              <div class="custom-file">
-                                                 <input type="file" name="image" value="<?php echo $lapor->foto; ?>" class="custom-file-input" id="image" required>
-                                                 <label class="custom-file-label" for="validationCustomFile">Upload bukti foto</label>
+                                                 <input type="file" name="image" value="<?php echo $lapor->foto; ?>" class="custom-file-input" id="image" required data-toggle="tooltip" data-placement="bottom" title="Ukuran maksimal 15 MB">
+                                                 <label class="custom-file-label" for="validationCustomFile">Upload bukti foto/video *ukuran maksimal 15 MB</label>
                                              </div>
                                          </div>
                                      </div>
 
                                      <div class="mt-4 text-right">
                                          <a class="btn btn-outline-danger waves-effect waves-light" href="<?php echo base_url(); ?>Lapor" class="btn btn-warning">Batal</a>
-                                         <button class="btn btn-primary waves-effect waves-light" type="submit">Laporakan</button>
+                                         <button class="btn btn-primary waves-effect waves-light" type="submit">Laporkan</button>
                                      </div>
 
                                  </form>

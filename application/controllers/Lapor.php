@@ -54,7 +54,7 @@ class Lapor extends CI_Controller
 
                 $config['image_library'] = 'gd2';
                 $config['allowed_types'] = 'jpeg|jpg|png';
-                $config['max_size'] = '2048';
+                $config['max_size'] = '15048';
                 $config['width'] = 400;
                 $config['height'] = 400;
                 $config['create_thumb'] = TRUE;

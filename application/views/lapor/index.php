@@ -54,7 +54,7 @@
                                              <th>Status</th>
                                              <th>Deskripsi</th>
                                              <th>Waktu Update</th>
-                                             <th>Foto</th>
+                                             <th>Bukti</th>
                                              <th>Aksi</th>
                                              <th>Rating</th>
                                              <th>Feedback</th>

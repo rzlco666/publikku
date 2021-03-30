@@ -39,17 +39,17 @@
                                             <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Surat/save">
 
                                             <div class="form-group row">
-                                                <label class="col-md-2 col-form-label">Nama</label>
+                                                <label for="lokasi" class="col-md-2 col-form-label">NIK</label>
                                                 <div class="col-md-10">
-                                                    <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
-                                                    <input class="form-control" type="text" value="<?php echo $user->username; ?>" name="nama" id="nama">
+                                                    <input class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="nik" id="nik">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="lokasi" class="col-md-2 col-form-label">NIK</label>
+                                                <label class="col-md-2 col-form-label">Nama</label>
                                                 <div class="col-md-10">
-                                                    <input class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="nik" id="nik">
+                                                    <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
+                                                    <input class="form-control" type="text" value="<?php echo $user->username; ?>" name="nama" id="nama">
                                                 </div>
                                             </div>
 

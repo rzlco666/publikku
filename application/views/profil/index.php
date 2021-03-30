@@ -33,14 +33,14 @@
                                              <p class="card-text">
                                              <table>
                                                  <tr>
-                                                     <td>Alamat</td>
-                                                     <td>:</td>
-                                                     <td><?php echo $user->alamat; ?></td>
-                                                 </tr>
-                                                 <tr>
                                                      <td>NIK (KTP)</td>
                                                      <td>:</td>
                                                      <td><?php echo $user->KTP; ?></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>Alamat</td>
+                                                     <td>:</td>
+                                                     <td><?php echo $user->alamat; ?></td>
                                                  </tr>
                                                  <tr>
                                                      <td>No HP</td>
@@ -82,6 +82,13 @@
                                     ?>
 
                                  <div class="form-group row">
+                                     <label for="KTP" class="col-md-2 col-form-label">NIK (KTP)</label>
+                                     <div class="col-md-10">
+                                         <input readonly class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="KTP" id="KTP">
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group row">
                                      <label for="username" class="col-md-2 col-form-label">Nama</label>
                                      <div class="col-md-10">
                                          <input readonly class="form-control" type="text" value="<?php echo $user->username; ?>" name="username" id="username">
@@ -92,13 +99,6 @@
                                      <label for="alamat" class="col-md-2 col-form-label">Alamat</label>
                                      <div class="col-md-10">
                                          <input readonly class="form-control" type="text" value="<?php echo $user->alamat; ?>" name="alamat" id="alamat">
-                                     </div>
-                                 </div>
-
-                                 <div class="form-group row">
-                                     <label for="KTP" class="col-md-2 col-form-label">NIK (KTP)</label>
-                                     <div class="col-md-10">
-                                         <input readonly class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="KTP" id="KTP">
                                      </div>
                                  </div>
 

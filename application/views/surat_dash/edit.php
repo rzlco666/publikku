@@ -29,17 +29,17 @@
                                             <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Surat/update">
 
                                             <div class="form-group row">
-                                                <label class="col-md-2 col-form-label">Nama</label>
+                                                <label for="lokasi" class="col-md-2 col-form-label">NIK</label>
                                                 <div class="col-md-10">
-                                                    <input type="hidden" name="id_surat" value="<?php echo $surat->id_surat; ?>">
-                                                    <input class="form-control" type="text" value="<?php echo $surat->nama; ?>" name="nama" id="nama">
+                                                    <input class="form-control" type="text" value="<?php echo $surat->nik; ?>" name="nik" id="nik">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="lokasi" class="col-md-2 col-form-label">NIK</label>
+                                                <label class="col-md-2 col-form-label">Nama</label>
                                                 <div class="col-md-10">
-                                                    <input class="form-control" type="text" value="<?php echo $surat->nik; ?>" name="nik" id="nik">
+                                                    <input type="hidden" name="id_surat" value="<?php echo $surat->id_surat; ?>">
+                                                    <input class="form-control" type="text" value="<?php echo $surat->nama; ?>" name="nama" id="nama">
                                                 </div>
                                             </div>
 
