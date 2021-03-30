@@ -43,8 +43,8 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group form-group-custom mb-4">
-                                                    <input type="email" class="form-control" name="email" id="email" required>
-                                                    <label for="email">Email</label> 
+                                                    <input type="number" class="form-control" name="hp" id="hp" required>
+                                                    <label for="hp">No HP</label> 
                                                 </div>
 
                                                 <div class="form-group form-group-custom mb-4">

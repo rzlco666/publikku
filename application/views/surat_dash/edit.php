@@ -51,9 +51,9 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="lokasi" class="col-md-2 col-form-label">Email</label>
+                                                <label for="lokasi" class="col-md-2 col-form-label">No HP</label>
                                                 <div class="col-md-10">
-                                                    <input class="form-control" type="text" value="<?php echo $surat->email; ?>" name="email" id="email">
+                                                    <input class="form-control" type="text" value="<?php echo $surat->hp; ?>" name="hp" id="hp">
                                                 </div>
                                             </div>
 

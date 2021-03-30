@@ -43,9 +43,9 @@
                                                      <td><?php echo $user->KTP; ?></td>
                                                  </tr>
                                                  <tr>
-                                                     <td>Email</td>
+                                                     <td>No HP</td>
                                                      <td>:</td>
-                                                     <td><?php echo $user->email; ?></td>
+                                                     <td><?php echo $user->hp; ?></td>
                                                  </tr>
                                              </table>
                                              </p>

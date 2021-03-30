@@ -43,9 +43,9 @@
                                                 <td><?php echo $user->KTP; ?></td>
                                             </tr>
                                             <tr>
-                                                <td>Email</td>
+                                                <td>No HP</td>
                                                 <td>:</td>
-                                                <td><?php echo $user->email; ?></td>
+                                                <td><?php echo $user->hp; ?></td>
                                             </tr>
                                         </table>
                                         </p>
@@ -254,9 +254,9 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="lokasi" class="col-md-2 col-form-label">Email</label>
+                                        <label for="lokasi" class="col-md-2 col-form-label">No HP</label>
                                         <div class="col-md-10">
-                                            <input class="form-control" type="text" value="<?php echo $user->email; ?>" name="email" id="email">
+                                            <input class="form-control" type="text" value="<?php echo $user->hp; ?>" name="hp" id="hp">
                                         </div>
                                     </div>
 

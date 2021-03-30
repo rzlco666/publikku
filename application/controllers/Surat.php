@@ -39,7 +39,7 @@ class Surat extends CI_Controller
     {
         $this->form_validation->set_rules('nama','Nama','required');
         $this->form_validation->set_rules('nik','NIK','required');
-        $this->form_validation->set_rules('email','Email','required');
+        $this->form_validation->set_rules('hp','Hp','required');
         $this->form_validation->set_rules('jenis','Jenis','required');
         $this->form_validation->set_rules('pesan','Pesan','required');
         $this->form_validation->set_rules('tanggal','Tanggal','required');
@@ -49,7 +49,7 @@ class Surat extends CI_Controller
             $data['nama'] = $this->input->post('nama');
             $data['status'] = 'Diperiksa';
             $data['nik'] = $this->input->post('nik');
-            $data['email'] = $this->input->post('email');
+            $data['hp'] = $this->input->post('hp');
             $data['alamat'] = $this->input->post('alamat');
             $data['tanggal'] = $this->input->post('tanggal');
             $data['id_user'] = $this->input->post('id_user');
@@ -69,7 +69,7 @@ class Surat extends CI_Controller
     {
         $this->form_validation->set_rules('nama','Nama','required');
         $this->form_validation->set_rules('nik','NIK','required');
-        $this->form_validation->set_rules('email','Email','required');
+        $this->form_validation->set_rules('hp','Hp','required');
         $this->form_validation->set_rules('jenis','Jenis','required');
         $this->form_validation->set_rules('pesan','Pesan','required');
         $this->form_validation->set_rules('tanggal','Tanggal','required');
@@ -79,7 +79,7 @@ class Surat extends CI_Controller
             $data['pesan'] = $this->input->post('pesan');
             $data['nama'] = $this->input->post('nama');
             $data['nik'] = $this->input->post('nik');
-            $data['email'] = $this->input->post('email');
+            $data['hp'] = $this->input->post('hp');
             $data['alamat'] = $this->input->post('alamat');
             $data['tanggal'] = $this->input->post('tanggal');
             $data['jenis'] = $this->input->post('jenis');

@@ -18,9 +18,9 @@ class Auth extends CI_Controller
 
     public function proses_login()
     {
-        $email = $this->input->post('email');
+        $hp = $this->input->post('hp');
         $password = $this->input->post('password');
-        if ($this->authen->login_user($email, $password)) {
+        if ($this->authen->login_user($hp, $password)) {
             redirect('Dashboard');
         } else {
             $this->session->set_flashdata('error', 'Username & Password salah');
@@ -30,7 +30,7 @@ class Auth extends CI_Controller
 
     public function logout()
     {
-        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('hp');
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('id_user');
         $this->session->unset_userdata('KTP');
@@ -47,18 +47,18 @@ class Auth extends CI_Controller
 
     public function proses_daftar()
     {
-        $this->form_validation->set_rules('email', 'email', 'trim|required|min_length[1]|max_length[255]|is_unique[user.email]');
+        $this->form_validation->set_rules('hp', 'hp', 'trim|required|min_length[1]|max_length[255]|is_unique[user.hp]');
         $this->form_validation->set_rules('KTP', 'KTP', 'trim|required|min_length[1]|max_length[255]|is_unique[user.KTP]');
         $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[1]|max_length[255]');
         $this->form_validation->set_rules('username', 'username', 'trim|required|min_length[1]|max_length[255]');
         if ($this->form_validation->run() == true) {
-            $email = $this->input->post('email');
+            $hp = $this->input->post('hp');
             $password = $this->input->post('password');
             $username = $this->input->post('username');
             $alamat = $this->input->post('alamat');
             $KTP = $this->input->post('KTP');
             $foto = 'avatar-1.jpg';
-            $this->authen->register($email, $password, $username, $alamat, $KTP, $foto);
+            $this->authen->register($hp, $password, $username, $alamat, $KTP, $foto);
             $this->session->set_flashdata('success_register', 'Proses Pendaftaran User Berhasil');
             redirect('Auth/login');
         } else {

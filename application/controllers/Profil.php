@@ -38,19 +38,19 @@ class Profil extends CI_Controller
     public function update()
     {
 
-        $this->form_validation->set_rules('email', 'email', 'trim|required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('hp', 'hp', 'trim|required|min_length[1]|max_length[255]');
         $this->form_validation->set_rules('KTP', 'KTP', 'trim|required|min_length[1]|max_length[255]');
         $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[1]|max_length[255]');
         $this->form_validation->set_rules('username', 'username', 'trim|required|min_length[1]|max_length[255]');
 
         if ($this->form_validation->run() == true) {
-            $email = $this->input->post('email');
+            $hp = $this->input->post('hp');
             $password = $this->input->post('password');
             $username = $this->input->post('username');
             $alamat = $this->input->post('alamat');
             $KTP = $this->input->post('KTP');
 
-            $this->authen->update($email, $password, $username, $alamat, $KTP);
+            $this->authen->update($hp, $password, $username, $alamat, $KTP);
             $this->session->set_flashdata('success_ubah', 'Data Berhasil Diubah');
             redirect('Profil');
         } else {

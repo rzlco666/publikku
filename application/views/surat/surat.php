@@ -45,9 +45,9 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="form_email">Email *</label>
-            <input id="form_email" type="email" name="email" class="form-control"
-              placeholder="Silahkan masukkan email anda *" required="required" data-error="Format email salah.">
+            <label for="form_email">No HP *</label>
+            <input id="form_email" type="number" name="hp" class="form-control"
+              placeholder="Silahkan masukkan no hp anda *" required="required" data-error="Format no hp salah.">
             <div class="help-block with-errors"></div>
           </div>
         </div>

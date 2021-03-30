@@ -7,12 +7,12 @@ class Authen extends CI_Model
         parent::__construct();
     }
 
-    function register($email, $password, $username, $alamat, $KTP, $foto)
+    function register($hp, $password, $username, $alamat, $KTP, $foto)
     {
         $foto = 'avatar-1.jpg';
 
         $data_user = array(
-            'email' => $email,
+            'hp' => $hp,
             'password' => $password,
             'username' => $username,
             'alamat' => $alamat,
@@ -22,14 +22,14 @@ class Authen extends CI_Model
         $this->db->insert('user', $data_user);
     }
 
-    function login_user($email, $password)
+    function login_user($hp, $password)
     {
-        $query = $this->db->get_where('user', array('email' => $email));
+        $query = $this->db->get_where('user', array('hp' => $hp));
         if ($query->num_rows() > 0) {
             $data_user = $query->row();
             $hash = $query->row('password');
             if ($password == $data_user->password) {
-                $this->session->set_userdata('email', $email);
+                $this->session->set_userdata('hp', $hp);
                 $this->session->set_userdata('username', $data_user->username);
                 $this->session->set_userdata('id_user', $data_user->id_user);
                 $this->session->set_userdata('alamat', $data_user->alamat);
@@ -58,11 +58,11 @@ class Authen extends CI_Model
         return $this->db->get_where('user', ["id_user" => $id_user])->row();
     }
 
-    public function update($email, $password, $username, $alamat, $KTP)
+    public function update($hp, $password, $username, $alamat, $KTP)
     {
         $id_user = $this->session->userdata('id_user');
         $data_user = array(
-            'email' => $email,
+            'hp' => $hp,
             'password' => $password,
             'username' => $username,
             'alamat' => $alamat,
