@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Mar 2021 pada 13.04
+-- Waktu pembuatan: 31 Mar 2021 pada 13.37
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.1
 
@@ -80,6 +80,7 @@ CREATE TABLE `fitur` (
   `tanggal` date NOT NULL,
   `id_dinas` int(11) NOT NULL,
   `foto` varchar(255) NOT NULL DEFAULT 'default.png',
+  `jenis` text NOT NULL,
   `id_kategori` int(11) NOT NULL,
   `waktu_update` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `rating` int(11) NOT NULL,
@@ -93,16 +94,18 @@ CREATE TABLE `fitur` (
 -- Dumping data untuk tabel `fitur`
 --
 
-INSERT INTO `fitur` (`id_fitur`, `isi_lapor`, `lokasi`, `status`, `deskripsi`, `tanggal`, `id_dinas`, `foto`, `id_kategori`, `waktu_update`, `rating`, `feedback`, `id`, `id_user`, `id_ins`) VALUES
-(40, '  <p>percobaan</p>  ', 'klaten', 'Diproses', 'sedang mengerjakan pelaporan atau menindak laanjuti', '2020-05-01', 1, 'tawuran_sekolah1.jpg', 6, '2021-03-02 10:48:02', 0, '', 0, 0, 0),
-(43, '<p>percobaan 3</p>', 'klaten', 'Ditolak', 'langsung ke lokasi', '2020-05-05', 2, 'kbkarn1.jpg', 1, '2021-03-02 10:48:08', 0, '', 0, 0, 0),
-(44, 'Test 123', 'Desa Keden', 'Selesai', 'Langsung ke lokasi', '2021-02-27', 1, 'default.png', 1, '2021-03-02 14:29:59', 5, '<p>Pelayanan sangat bagus, saya puas</p>', 0, 24, 1),
-(51, '<p>Percobaan 2</p>', 'Keden', 'Selesai', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:45:38', 0, '', 0, 24, 0),
-(52, '<p>Jalan disini rusak</p>', 'Desan Keden Wetan', 'Diproses', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:00:18', 0, '', 0, 24, 0),
-(53, '<p>Test edit</p>', 'Solo', 'Diperiksa', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', 0, '2021-03-02 15:51:18', 0, '', 0, 24, 0),
-(58, '<p>Bismillah</p>', 'Sukabirus 2s', 'Diperiksa', 'Menunggu diperiksa', '2021-03-02', 0, 'NV.jpg', 0, '2021-03-02 21:35:17', 0, '', 0, 24, 0),
-(59, '<p>Kemacetan</p>', 'Krangkeng', 'Selesai', 'Menunggu diperiksa', '2021-03-05', 0, 'banner_aims.png', 0, '2021-03-05 23:05:58', 3, '<p>Kurang Cepat</p>', 0, 28, 0),
-(60, '<p>Jelaskan hal yang ingin blablabla</p>', 'Keden Timur', 'Diperiksa', 'Menunggu diperiksa', '2021-03-30', 0, 'MzE1OTY2MA.jpeg', 0, '2021-03-30 16:14:24', 0, '', 0, 29, 0);
+INSERT INTO `fitur` (`id_fitur`, `isi_lapor`, `lokasi`, `status`, `deskripsi`, `tanggal`, `id_dinas`, `foto`, `jenis`, `id_kategori`, `waktu_update`, `rating`, `feedback`, `id`, `id_user`, `id_ins`) VALUES
+(40, '  <p>percobaan</p>  ', 'klaten', 'Diproses', 'sedang mengerjakan pelaporan atau menindak laanjuti', '2020-05-01', 1, 'tawuran_sekolah1.jpg', '', 6, '2021-03-02 10:48:02', 0, '', 0, 0, 0),
+(43, '<p>percobaan 3</p>', 'klaten', 'Ditolak', 'langsung ke lokasi', '2020-05-05', 2, 'kbkarn1.jpg', '', 1, '2021-03-02 10:48:08', 0, '', 0, 0, 0),
+(44, 'Test 123', 'Desa Keden', 'Selesai', 'Langsung ke lokasi', '2021-02-27', 1, 'default.png', '', 1, '2021-03-02 14:29:59', 5, '<p>Pelayanan sangat bagus, saya puas</p>', 0, 24, 1),
+(51, '<p>Percobaan 2</p>', 'Keden', 'Selesai', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', '', 0, '2021-03-02 15:45:38', 0, '', 0, 24, 0),
+(52, '<p>Jalan disini rusak</p>', 'Desan Keden Wetan', 'Diproses', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', '', 0, '2021-03-02 15:00:18', 0, '', 0, 24, 0),
+(53, '<p>Test edit</p>', 'Solo', 'Diperiksa', 'Menunggu diperiksa', '2021-03-02', 0, 'default.png', '', 0, '2021-03-02 15:51:18', 0, '', 0, 24, 0),
+(58, '<p>Bismillah</p>', 'Sukabirus 2s', 'Diperiksa', 'Menunggu diperiksa', '2021-03-02', 0, 'NV.jpg', '', 0, '2021-03-02 21:35:17', 0, '', 0, 24, 0),
+(59, '<p>Kemacetan</p>', 'Krangkeng', 'Selesai', 'Menunggu diperiksa', '2021-03-05', 0, 'banner_aims.png', '', 0, '2021-03-05 23:05:58', 3, '<p>Kurang Cepat</p>', 0, 28, 0),
+(60, '<p>Jelaskan hal yang ingin blablabla</p>', 'Keden Timur', 'Diperiksa', 'Menunggu diperiksa', '2021-03-30', 0, 'MzE1OTY2MA.jpeg', '', 0, '2021-03-30 16:14:24', 0, '', 0, 29, 0),
+(61, '<p>Coba upload video</p>', 'Keden', 'Diperiksa', 'Menunggu diperiksa', '2021-03-31', 0, 'Placeholder_Video.mp4', '', 0, '2021-03-31 16:48:46', 0, '', 0, 29, 0),
+(62, '<p>Coba kategori</p>', 'Keden', 'Diperiksa', 'Menunggu diperiksa', '2021-03-31', 0, 'nike-utrecht-20-21-home-kit_(1)1.png', 'Pelaporan', 0, '2021-03-31 18:18:09', 0, '', 0, 29, 0);
 
 --
 -- Trigger `fitur`
@@ -195,7 +198,8 @@ INSERT INTO `notifikasi` (`id_notif`, `id_receiver`, `statuss`, `tanggal`, `jeni
 (11, 28, 'Update Pengajuan Diperiksa', '2021-03-05 23:07:57', 'Pengajuan'),
 (12, 28, 'Update Pengajuan Diproses', '2021-03-05 23:08:26', 'Pengajuan'),
 (13, 28, 'Update Pengajuan Selesai', '2021-03-05 23:09:06', 'Pengajuan'),
-(14, 28, 'Update Pengajuan Selesai', '2021-03-05 23:09:21', 'Pengajuan');
+(14, 28, 'Update Pengajuan Selesai', '2021-03-05 23:09:21', 'Pengajuan'),
+(15, 29, 'Update Pelaporan Diperiksa', '2021-03-31 18:18:09', 'Pelaporan');
 
 -- --------------------------------------------------------
 
@@ -400,7 +404,7 @@ ALTER TABLE `dinas`
 -- AUTO_INCREMENT untuk tabel `fitur`
 --
 ALTER TABLE `fitur`
-  MODIFY `id_fitur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_fitur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT untuk tabel `instansi`
@@ -418,7 +422,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `notifikasi`
 --
 ALTER TABLE `notifikasi`
-  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `rating`
