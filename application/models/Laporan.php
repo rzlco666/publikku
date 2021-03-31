@@ -50,6 +50,26 @@ class Laporan extends CI_Model
         }
     }
 
+    public function getByAspirasi()
+    {
+        $this->db->select('id_fitur, COUNT(id_fitur) as total');
+        $query = $this->db->get_where($this->table, ["jenis" => "Aspirasi"]);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
+    public function getByLapo()
+    {
+        $this->db->select('id_fitur, COUNT(id_fitur) as total');
+        $query = $this->db->get_where($this->table, ["jenis" => "Pelaporan"]);
+        if($query->num_rows()>0)
+        {
+            return $query->row();
+        }
+    }
+
     public function getByProses()
     {
         $this->db->select('id_fitur, COUNT(id_fitur) as total');

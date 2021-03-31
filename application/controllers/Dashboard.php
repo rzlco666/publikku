@@ -22,6 +22,8 @@ class Dashboard extends CI_Controller
         $data['laporan2'] = $this->laporan->getByProses();
         $data['laporan3'] = $this->laporan->getByPeriksa();
         $data['laporan4'] = $this->laporan->getBySelesai();
+        $data['laporan5'] = $this->laporan->getByAspirasi();
+        $data['laporan6'] = $this->laporan->getByLapo();
 
         $data['surat'] = $this->pengajuan->getByTotal();
         $data['surat2'] = $this->pengajuan->getByProses();

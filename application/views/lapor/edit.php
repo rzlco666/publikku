@@ -60,6 +60,17 @@
                                          </div>
                                      </div>
 
+                                     <div class="form-group row">
+                                                <label class="col-md-2 col-form-label">Jenis Pelaporan</label>
+                                                <div class="col-md-10">
+                                                    <select name="jenis" class="custom-select">
+                                                        <option disabled="disabled" selected>Pilih jenis pelaporan</option>
+                                                        <option value="Aspirasi">Aspirasi</option>
+                                                        <option value="Pelaporan">Pelaporan</option>
+                                                    </select>
+                                                </div>
+                                     </div>
+
                                      <div class="mt-4 text-right">
                                          <a class="btn btn-outline-danger waves-effect waves-light" href="<?php echo base_url(); ?>Lapor" class="btn btn-warning">Batal</a>
                                          <button class="btn btn-primary waves-effect waves-light" type="submit">Laporkan</button>

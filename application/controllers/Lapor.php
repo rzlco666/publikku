@@ -45,6 +45,7 @@ class Lapor extends CI_Controller
             $data['status'] = 'Diperiksa';
             $data['deskripsi'] = 'Menunggu diperiksa';
             $data['tanggal'] = $this->input->post('tanggal');
+            $data['jenis'] = $this->input->post('jenis');
             $data['id_user'] = $this->input->post('id_user');
 
             //cek imange
@@ -53,7 +54,7 @@ class Lapor extends CI_Controller
             if ($upload_image) {
 
                 $config['image_library'] = 'gd2';
-                $config['allowed_types'] = 'jpeg|jpg|png';
+                $config['allowed_types'] = 'jpeg|jpg|png|mp4|mkv|avi|mpg|mpeg|webm';
                 $config['max_size'] = '15048';
                 $config['width'] = 400;
                 $config['height'] = 400;
@@ -98,14 +99,15 @@ class Lapor extends CI_Controller
             $data['isi_lapor'] = $this->input->post('isi');
             $data['lokasi'] = $this->input->post('lokasi');
             $data['tanggal'] = $this->input->post('tanggal');
+            $data['jenis'] = $this->input->post('jenis');
             //cek imange
             $upload_image = $_FILES['image']['name'];
 
             if ($upload_image) {
 
                 $config['image_library'] = 'gd2';
-                $config['allowed_types'] = 'jpeg|jpg|png';
-                $config['max_size'] = '2048';
+                $config['allowed_types'] = 'jpeg|jpg|png|mp4|mkv|avi|mpg|mpeg|webm';
+                $config['max_size'] = '15048';
                 $config['width'] = 400;
                 $config['height'] = 400;
                 $config['create_thumb'] = TRUE;

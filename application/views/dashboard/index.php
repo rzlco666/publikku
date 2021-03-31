@@ -54,12 +54,6 @@
                                             <a href="<?php echo base_url(); ?>Profil/edit/<?php echo $this->session->userdata('id_user'); ?>" class="btn btn-primary btn-sm">Ubah Profil <i class="mdi mdi-arrow-right ml-1"></i></a>
                                         </div>
                                     </div>
-
-                                    <div class="col-5 ml-auto">
-                                        <div class="text-right">
-                                            <img width="90" src="<?= base_url('assets_user/images/users/') . $user->foto ?>" alt="" class="img-fluid">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -113,6 +107,28 @@
                                         </div>
                                     </div>
                                 </li>
+                                <li class="list-group-item">
+                                    <div class="media my-2">
+                                        <div class="media-body">
+                                            <p class="text-muted mb-2">Jumlah Aspirasi</p>
+                                            <h5 class="mb-0"><?php echo $laporan5->total; ?></h5>
+                                        </div>
+                                        <div class="icons-lg ml-2 align-self-center">
+                                            <i class="uim uim-comment-alt-dots"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="media my-2">
+                                        <div class="media-body">
+                                            <p class="text-muted mb-2">Jumlah Pelaporan</p>
+                                            <h5 class="mb-0"><?php echo $laporan6->total; ?></h5>
+                                        </div>
+                                        <div class="icons-lg ml-2 align-self-center">
+                                            <i class="uim uim-align-alt"></i>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -156,8 +172,19 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group row">
+                                                <label class="col-md-2 col-form-label">Jenis Pelaporan</label>
+                                                <div class="col-md-10">
+                                                    <select name="jenis" class="custom-select">
+                                                        <option disabled="disabled" selected>Pilih jenis pelaporan</option>
+                                                        <option value="Aspirasi">Aspirasi</option>
+                                                        <option value="Pelaporan">Pelaporan</option>
+                                                    </select>
+                                                </div>
+                                     </div>
+
                                     <div class="mt-4 text-right">
-                                        <button class="btn btn-primary waves-effect waves-light" type="submit">Laporakan</button>
+                                        <button class="btn btn-primary waves-effect waves-light" type="submit">Laporkan</button>
                                     </div>
 
                                 </form>
@@ -294,7 +321,7 @@
 
                                     <div class="mt-4 text-right">
                                         <a class="btn btn-outline-danger waves-effect waves-light" href="<?php echo base_url(); ?>Surat" class="btn btn-warning">Batal</a>
-                                        <button class="btn btn-primary waves-effect waves-light" type="submit">Laporakan</button>
+                                        <button class="btn btn-primary waves-effect waves-light" type="submit">Ajukan</button>
                                     </div>
 
                                 </form>

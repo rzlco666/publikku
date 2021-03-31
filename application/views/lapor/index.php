@@ -54,6 +54,7 @@
                                              <th>Status</th>
                                              <th>Deskripsi</th>
                                              <th>Waktu Update</th>
+                                             <th>Kategori</th>
                                              <th>Bukti</th>
                                              <th>Aksi</th>
                                              <th>Rating</th>
@@ -75,20 +76,36 @@
                                                  <td><?php echo $row->status; ?></td>
                                                  <td><?php echo $row->deskripsi; ?></td>
                                                  <td><?php echo $row->waktu_update; ?></td>
-                                                 <td><img width="150px" src="<?= base_url('assets_user/images/laporan/' . $row->foto) ?>" </td>
+                                                 <td><?php echo $row->jenis; ?></td>
+                                                 <td>
+                                                    <?php 
+                                                        $fot = $row->foto;
+                                                        $cek = substr($fot, -4);
+
+                                                        if ($cek == 'jpeg' || $cek == ".jpg" || $cek == ".png") {
+                                                            ?>
+                                                            <img width="150px" src="<?= base_url('assets_user/images/laporan/' . $row->foto) ?>">
+                                                            <?php
+                                                        }else{
+                                                            ?>
+                                                            <video width="350px" controls="controls" src="<?= base_url('assets_user/images/laporan/' . $row->foto) ?>"></video>
+                                                            <?php
+                                                        }
+
+                                                    ?>
+                                                 </td>
                                                  <td>
                                                      <?php
                                                         $stat = $row->status;
                                                         if ($stat == "Selesai") {
                                                         ?> <a href="<?php echo base_url(); ?>Rating/edit/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Beri Rating</a> <?php
-                                                                                                                                                                            } elseif ($stat == "Diproses") {
-                                                                                                                                                                                echo "Sedang Diproses";
-                                                                                                                                                                            } else {
-                                                                                                                                                                                ?><a href="<?php echo base_url(); ?>Lapor/edit/<?php echo $row->id_fitur; ?>" class="btn btn-danger">Edit</a>
+                                                        } elseif ($stat == "Diproses") {
+                                                            echo "Sedang Diproses";
+                                                        } else {
+                                                        ?>
+                                                         <a href="<?php echo base_url(); ?>Lapor/edit/<?php echo $row->id_fitur; ?>" class="btn btn-danger">Edit</a>
                                                          <a href="<?php echo base_url(); ?>Lapor/delete/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Hapus</a> <?php
-                                                                                                                                                                            }
-
-                                                                                                                                                                            ?>
+                                                        }                                                                                            ?>
                                                  </td>
                                                  <td>
                                                      <?php
