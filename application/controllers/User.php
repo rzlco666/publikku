@@ -40,5 +40,17 @@ class User extends CI_Controller
         $this->load->view('infodes/pekerjaan');
         $this->load->view('home/footer');
     }
+    public function agama()
+    {
+        $this->load->view('home/header');
+        $this->load->view('infodes/agama');
+        $this->load->view('home/footer');
+    }
+    public function kelamin()
+    {
+        $this->load->view('home/header');
+        $this->load->view('infodes/kelamin');
+        $this->load->view('home/footer');
+    }
 
 }

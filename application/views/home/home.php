@@ -153,7 +153,7 @@
         <div class="col-md-6">
           <div class="icon-box">
             <i class="icofont-worker"></i>
-            <h4><a href="#">Data Pekerjaan</a></h4>
+            <h4><a href="<?php echo base_url('User/pekerjaan'); ?>">Data Pekerjaan</a></h4>
             <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate
               non provident</p>
           </div>
@@ -169,7 +169,7 @@
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-heart"></i>
-            <h4><a href="#">Data Agama</a></h4>
+            <h4><a href="<?php echo base_url('User/agama'); ?>">Data Agama</a></h4>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
             </p>
           </div>
@@ -193,7 +193,7 @@
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-users-alt-4"></i>
-            <h4><a href="#">Data Jenis Kelamin</a></h4>
+            <h4><a href="<?php echo base_url('User/kelamin'); ?>">Data Jenis Kelamin</a></h4>
             <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
               eligendi</p>
           </div>
