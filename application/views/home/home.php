@@ -161,7 +161,7 @@
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-chart-bar-graph"></i>
-            <h4><a href="#">Statistik Umur</a></h4>
+            <h4><a href="<?php echo base_url('User/umur'); ?>">Statistik Umur</a></h4>
             <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad
               limino ata</p>
           </div>
@@ -177,7 +177,7 @@
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-library"></i>
-            <h4><a href="#">Data Pendidikan</a></h4>
+            <h4><a href="<?php echo base_url('User/pendidikan'); ?>">Data Pendidikan</a></h4>
             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
               laborum</p>
           </div>
@@ -185,7 +185,7 @@
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-earth"></i>
-            <h4><a href="#">Data Wilayah</a></h4>
+            <h4><a href="<?php echo base_url('User/wilayah'); ?>">Data Wilayah</a></h4>
             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
               deleniti atque</p>
           </div>
