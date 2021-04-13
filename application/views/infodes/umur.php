@@ -37,52 +37,52 @@
           <tr class=''>
             <td class='text-right'>1</td>
             <td>Di bawah 1 Tahun</td>
-            <td class='text-right'>1818</td>
+            <td class='text-right'>241</td>
           </tr>
           <tr class=''>
             <td class='text-right'>2</td>
             <td>2 s/d 4 Tahun</td>
-            <td class='text-right'>305</td>
+            <td class='text-right'>74</td>
           </tr>
           <tr class=''>
             <td class='text-right'>3</td>
             <td>5 s/d 9 Tahun</td>
-            <td class='text-right'>706</td>
+            <td class='text-right'>271</td>
           </tr>
           <tr class=''>
             <td class='text-right'>4</td>
             <td>10 s/d 14 Tahun</td>
-            <td class='text-right'>16</td>
+            <td class='text-right'>328</td>
           </tr>
           <tr class=''>
             <td class='text-right'>5</td>
             <td>15 s/d 19 Tahun</td>
-            <td class='text-right'>80</td>
+            <td class='text-right'>328</td>
           </tr>
           <tr class=''>
             <td class='text-right'>6</td>
             <td>20 s/d 24 Tahun</td>
-            <td class='text-right'>1</td>
+            <td class='text-right'>328</td>
           </tr>
           <tr class=''>
             <td class='text-right'>7</td>
             <td>25 s/d 29 Tahun</td>
-            <td class='text-right'>33</td>
+            <td class='text-right'>283</td>
           </tr>
           <tr class=''>
             <td class='text-right'>8</td>
             <td>30 s/d 34 Tahun</td>
-            <td class='text-right'>79</td>
+            <td class='text-right'>269</td>
           </tr>
           <tr class=''>
             <td class='text-right'>9</td>
             <td>35 s/d 39 Tahun</td>
-            <td class='text-right'>549</td>
+            <td class='text-right'>340</td>
           </tr>
           <tr class=''>
             <td class='text-right'>10</td>
             <td>Di atas 40 Tahun</td>
-            <td class='text-right'>2</td>
+            <td class='text-right'>1994</td>
           </tr>
         </tbody>
       </table>
@@ -116,7 +116,7 @@
           ],
         datasets: [{
           // Jumlah Value yang ditampilkan
-           data:[1818,305,706,16,80,1,33,79,549,2],
+           data:[241,74,271,328,328,328,283,269,340,1994],
 
           backgroundColor:[
                  'rgba(255,0,0, 0.5)',

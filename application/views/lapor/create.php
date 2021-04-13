@@ -28,12 +28,12 @@
                                  <h5 class="header-title mb-4">Buat Laporan</h5>
 
                                  <?php
-                                    if ($this->session->flashdata('error') != '') {
-                                        echo '<div class="alert alert-primary" role="alert">';
-                                        echo $this->session->flashdata('error');
-                                        echo '</div>';
-                                    }
-                                    ?>
+if ($this->session->flashdata('error') != '') {
+    echo '<div class="alert alert-primary" role="alert">';
+    echo $this->session->flashdata('error');
+    echo '</div>';
+}
+?>
 
                                  <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Lapor/save">
 
@@ -45,10 +45,12 @@
                                      </div>
 
                                      <div class="form-group row">
-                                         <label for="lokasi" class="col-md-2 col-form-label">Lokasi</label>
+                                         <label for="lokasi" class="col-md-2 col-form-label">Lokasi Kejadian</label>
                                          <div class="col-md-10">
                                              <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
+                                             *Masukan Lokasi kejadian RT/RW dan dan titik tepatnya kejadian (contoh : Dk Krangkeng RT 01 RW 05, Depan Masjid AN-Nur)
                                              <input class="form-control" type="text" name="lokasi" id="lokasi">
+
                                          </div>
                                      </div>
 
@@ -75,7 +77,11 @@
                                                     <select name="jenis" class="custom-select">
                                                         <option disabled="disabled" selected>Pilih jenis pelaporan</option>
                                                         <option value="Aspirasi">Aspirasi</option>
-                                                        <option value="Pelaporan">Pelaporan</option>
+                                                        <option value="Pelaporan">Banjir</option>
+                                                        <option value="Pelaporan">Kebakaran</option>
+                                                        <option value="Pelaporan">Jalan Rusak</option>
+                                                        <option value="Pelaporan">Penyakit</option>
+                                                        <option value="Pelaporan">Longsor</option>
                                                     </select>
                                                 </div>
                                      </div>

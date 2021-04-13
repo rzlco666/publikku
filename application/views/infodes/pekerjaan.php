@@ -37,27 +37,27 @@
           <tr class=''>
             <td class='text-right'>1</td>
             <td>BELUM/TIDAK BEKERJA</td>
-            <td class='text-right'>1818</td>
+            <td class='text-right'>678</td>
           </tr>
           <tr class=''>
             <td class='text-right'>2</td>
             <td>MENGURUS RUMAH TANGGA</td>
-            <td class='text-right'>305</td>
+            <td class='text-right'>281</td>
           </tr>
           <tr class=''>
             <td class='text-right'>3</td>
             <td>PELAJAR/MAHASISWA</td>
-            <td class='text-right'>706</td>
+            <td class='text-right'>848</td>
           </tr>
           <tr class=''>
             <td class='text-right'>4</td>
             <td>PENSIUNAN</td>
-            <td class='text-right'>16</td>
+            <td class='text-right'>19</td>
           </tr>
           <tr class=''>
             <td class='text-right'>5</td>
             <td>PEGAWAI NEGERI SIPIL (PNS)</td>
-            <td class='text-right'>80</td>
+            <td class='text-right'>44</td>
           </tr>
           <tr class=''>
             <td class='text-right'>6</td>
@@ -67,22 +67,22 @@
           <tr class=''>
             <td class='text-right'>7</td>
             <td>KEPOLISIAN RI (POLRI)</td>
-            <td class='text-right'>33</td>
+            <td class='text-right'>3</td>
           </tr>
           <tr class=''>
             <td class='text-right'>8</td>
             <td>PERDAGANGAN</td>
-            <td class='text-right'>79</td>
+            <td class='text-right'>41</td>
           </tr>
           <tr class=''>
             <td class='text-right'>9</td>
             <td>PETANI/PEKEBUN</td>
-            <td class='text-right'>549</td>
+            <td class='text-right'>15</td>
           </tr>
           <tr class=''>
             <td class='text-right'>10</td>
-            <td>PETERNAK</td>
-            <td class='text-right'>2</td>
+            <td>LAIN LAIN</td>
+            <td class='text-right'>2393</td>
           </tr>
         </tbody>
       </table>
@@ -112,11 +112,11 @@
                   'KEPOLISIAN RI (POLRI)',
                   'PERDAGANGAN',
                   'PETANI/PEKEBUN',
-                  'PETERNAK'
+                  'LAIN LAIN'
           ],
         datasets: [{
           // Jumlah Value yang ditampilkan
-           data:[1818,305,706,16,80,1,33,79,549,2],
+           data:[678,281,848,19,4,1,3,41,15,2393],
 
           backgroundColor:[
                  'rgba(255,0,0, 0.5)',

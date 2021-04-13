@@ -37,52 +37,52 @@
           <tr class=''>
             <td class='text-right'>1</td>
             <td>TIDAK / BELUM SEKOLAH</td>
-            <td class='text-right'>1818</td>
+            <td class='text-right'>681</td>
           </tr>
           <tr class=''>
             <td class='text-right'>2</td>
             <td>BELUM TAMAT SD/SEDERAJAT</td>
-            <td class='text-right'>305</td>
+            <td class='text-right'>390</td>
           </tr>
           <tr class=''>
             <td class='text-right'>3</td>
             <td>TAMAT SD / SEDERAJAT</td>
-            <td class='text-right'>706</td>
+            <td class='text-right'>849</td>
           </tr>
           <tr class=''>
             <td class='text-right'>4</td>
             <td>SLTP/SEDERAJAT</td>
-            <td class='text-right'>16</td>
+            <td class='text-right'>710</td>
           </tr>
           <tr class=''>
             <td class='text-right'>5</td>
             <td>SLTA / SEDERAJAT</td>
-            <td class='text-right'>80</td>
+            <td class='text-right'>1380</td>
           </tr>
           <tr class=''>
             <td class='text-right'>6</td>
             <td>DIPLOMA I / II</td>
-            <td class='text-right'>1</td>
+            <td class='text-right'>23</td>
           </tr>
           <tr class=''>
             <td class='text-right'>7</td>
             <td>AKADEMI/ DIPLOMA III/S. MUDA</td>
-            <td class='text-right'>33</td>
+            <td class='text-right'>111</td>
           </tr>
           <tr class=''>
             <td class='text-right'>8</td>
             <td>DIPLOMA IV/ STRATA I</td>
-            <td class='text-right'>79</td>
+            <td class='text-right'>252</td>
           </tr>
           <tr class=''>
             <td class='text-right'>9</td>
             <td>STRATA II</td>
-            <td class='text-right'>549</td>
+            <td class='text-right'>9</td>
           </tr>
           <tr class=''>
             <td class='text-right'>10</td>
             <td>STRATA III</td>
-            <td class='text-right'>2</td>
+            <td class='text-right'>0</td>
           </tr>
         </tbody>
       </table>
@@ -116,7 +116,7 @@
           ],
         datasets: [{
           // Jumlah Value yang ditampilkan
-           data:[1818,305,706,16,80,1,33,79,549,2],
+           data:[681,390,849,710,1380,23,111,252,9,0],
 
           backgroundColor:[
                  'rgba(255,0,0, 0.5)',

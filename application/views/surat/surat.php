@@ -16,107 +16,34 @@
 </section><!-- End Breadcrumbs -->
 
 <!-- ======= Services Section ======= -->
-<section id="surat" class="services">
-  <div class="container">
-    <div class="controls">
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group has-error has-danger">
-            <label for="form_name">Nama *</label>
-            <input id="form_name" type="text" name="name" class="form-control"
-              placeholder="Silahkan masukkan nama anda *" required="required" data-error="Nama harus diisi!.">
-            <div class="help-block with-errors">
-              <ul class="list-unstyled">
-                <li>Nama harus diisi!.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="form_lastname">NIK *</label>
-            <input id="form_lastname" type="text" name="nik" class="form-control"
-              placeholder="Silahkan masukkan NIK anda *" required="required" data-error="NIK Harus diisi!.">
-            <div class="help-block with-errors"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="form_email">No HP *</label>
-            <input id="form_email" type="number" name="hp" class="form-control"
-              placeholder="Silahkan masukkan no hp anda *" required="required" data-error="Format no hp salah.">
-            <div class="help-block with-errors"></div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="form_need">Pilih Jenis Surat *</label>
-            <select id="form_need" name="keperluan" class="form-control" required="required"
-              data-error="Pilih jenis surat yang anda perlukan">
-              <option value=""></option>
-              <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
-              <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
-              <option value="Surat Keterangan Miskin">Surat Keterangan Miskin</option>
-              <option value="Surat Keterangan Belum Pernah Menikah">Surat Keterangan Belum Pernah Menikah</option>
-              <option value="Surat Keterangan Kelahiran">Surat Keterangan Kelahiran</option>
-              <option value="Surat Keterangan Kematian">Surat Keterangan Kematian</option>
-              <option value="Surat Keterangan Beda Nama">Surat Keterangan Beda Nama</option>
-              <option value="Surat Keterangan Penghasilan">Surat Keterangan Penghasilan</option>
-              <option value="Surat Keterangan Harga Tanah">Surat Keterangan Harga Tanah</option>
-            </select>
-            <div class="help-block with-errors"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label for="form_message">Pesan *</label>
-            <textarea id="form_message" name="message" class="form-control"
-              placeholder="Silahkan isi keperluan atau keterangan lainnya disini *" rows="4" required="required"
-              data-error="Silahkan isi pesan atau keterangan anda!."></textarea>
-            <div class="help-block with-errors"></div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <input type="submit" class="btn btn-danger btn-send disabled" value="Kirim Permohonan">
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section><!-- End Services Section -->
 
 <!-- ======= Features Section ======= -->
 <section id="features" class="features">
   <div class="container">
 
     <div class="section-title">
-      <h2>Features</h2>
-      <p>Check our Features</p>
+      <h2>Tata Cara Pengajuan Surat Online</h2>
+      <p>Pelayanan Pengajuan Surat Online</p>
     </div>
 
     <div class="row">
       <div class="col-lg-3">
         <ul class="nav nav-tabs flex-column">
           <li class="nav-item">
-            <a class="nav-link active show" data-toggle="tab" href="#tab-1">Modi sit est</a>
+            <a class="nav-link active show" data-toggle="tab" href="#tab-1">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tab-2">Unde praesentium sed</a>
+            <a class="nav-link" data-toggle="tab" href="#tab-2">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
+            <a class="nav-link" data-toggle="tab" href="#tab-3">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
+            <a class="nav-link" data-toggle="tab" href="#tab-4">Buat Pengajuan Surat</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+            <a class="nav-link" data-toggle="tab" href="#tab-5">Cetak Surat</a>
           </li>
         </ul>
       </div>
@@ -125,12 +52,11 @@
           <div class="tab-pane active show" id="tab-1">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>Architecto ut aperiam autem id</h3>
-                <p class="font-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata
-                  raqer a videna mareta paulona marka</p>
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa
-                  odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni
-                  nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <h3>Register Akun</h3>
+                <p class="font-italic"></p>
+                <p>Register Pengajuan Surat adalah proses pertama yang harus dilakukan oleh masyarakat apabila belum memiliki akun.
+                Dengan mengisi dat persyaratan yang harus diisi seperti Nama, NIK, Alamat dll. Setelah semua data sudah terisi masyarakat
+                menekan tombol buat akun dan akun masyarakat sudah bisa digunakan untuk login. </p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src="assets/img/features-1.png" alt="" class="img-fluid">
@@ -140,12 +66,9 @@
           <div class="tab-pane" id="tab-2">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>Et blanditiis nemo veritatis excepturi</h3>
-                <p class="font-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata
-                  raqer a videna mareta paulona marka</p>
-                <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt
-                  est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque
-                  beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                <h3>Login Masyarakat</h3>
+                <p>Proses Login adalah proses selanjutnya dimana setelah masyarakat berhasil melakukan registrasi akun maka masyarakat
+                bisa melakukan login dengan menginputkan username dan password yang sesuai saat registerasi. setelah login berhasil maka masyarakat akan masuk ke dalam halaman dashboard. </p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src="assets/img/features-2.png" alt="" class="img-fluid">
@@ -155,12 +78,8 @@
           <div class="tab-pane" id="tab-3">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                <p class="font-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus
-                  non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque
-                  necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum
-                  odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                <h3>Dashboard</h3>
+                <p>Setelah masyarakat berhasil melakukan proses login maka masyarakat akan masuk ke halaman dashboard untuk melakukan pengajuan surat yang dibutuhkan. </p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src="assets/img/features-3.png" alt="" class="img-fluid">
@@ -170,12 +89,8 @@
           <div class="tab-pane" id="tab-4">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                <p class="font-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis
-                  delectus</p>
-                <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam
-                  fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores
-                  sed qui veritatis aperiam quia a laborum inventore</p>
+                <h3>Pengajuan Surat Online</h3>
+                <p>Ajukan surat permohonan yang telah disediakan pada form yang tersedia. setelah itu surat akan di proses.<p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src="assets/img/features-4.png" alt="" class="img-fluid">
@@ -185,11 +100,8 @@
           <div class="tab-pane" id="tab-5">
             <div class="row">
               <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                <p class="font-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut
-                  quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae
-                  molestiae voluptate vel</p>
+                <h3>Cetak Surat</h3>
+                <p>Cetak surat yang di butuhkan masyrakat setelah pemerintah Desa Keden mengirimkan surat permohonan.</p>
               </div>
               <div class="col-lg-4 text-center order-1 order-lg-2">
                 <img src="assets/img/features-5.png" alt="" class="img-fluid">

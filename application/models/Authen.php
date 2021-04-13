@@ -28,7 +28,7 @@ class Authen extends CI_Model
         if ($query->num_rows() > 0) {
             $data_user = $query->row();
             $hash = $query->row('password');
-            if ($password == $data_user->password) {
+            if ($password == $data_user->password && $data_user->status == "aktif") {
                 $this->session->set_userdata('hp', $hp);
                 $this->session->set_userdata('username', $data_user->username);
                 $this->session->set_userdata('id_user', $data_user->id_user);

@@ -37,12 +37,12 @@
           <tr class=''>
             <td class='text-right'>1</td>
             <td>PRIA</td>
-            <td class='text-right'>39</td>
+            <td class='text-right'>2159</td>
           </tr>
           <tr class=''>
             <td class='text-right'>2</td>
             <td>WANITA</td>
-            <td class='text-right'>1</td>
+            <td class='text-right'>2173</td>
           </tr>
         </tbody>
       </table>
@@ -68,7 +68,7 @@
           ],
         datasets: [{
           // Jumlah Value yang ditampilkan
-           data:[3001,3125],
+           data:[2159,2173],
 
           backgroundColor:[
                  'rgba(255,0,0, 0.5)',

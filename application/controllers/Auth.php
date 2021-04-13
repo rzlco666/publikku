@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->load->model('authen');
@@ -23,7 +23,7 @@ class Auth extends CI_Controller
         if ($this->authen->login_user($hp, $password)) {
             redirect('Dashboard');
         } else {
-            $this->session->set_flashdata('error', 'Username & Password salah');
+            $this->session->set_flashdata('error', 'Akun Anda Belum Diverifikasi');
             redirect('Auth/login');
         }
     }
@@ -60,6 +60,7 @@ class Auth extends CI_Controller
             $foto = 'avatar-1.jpg';
             $this->authen->register($hp, $password, $username, $alamat, $KTP, $foto);
             $this->session->set_flashdata('success_register', 'Proses Pendaftaran User Berhasil');
+            $this->session->set_flashdata('alert', 'Akun Anda Menunggu Verifikasi');
             redirect('Auth/login');
         } else {
             $this->session->set_flashdata('error', validation_errors());

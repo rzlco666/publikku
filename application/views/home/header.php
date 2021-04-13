@@ -51,12 +51,11 @@
             <ul>
               <li><a href="<?php echo base_url('User/surat'); ?>">Permintaan Surat Keterangan</a></li>
               <li><a href="<?php echo base_url('User/lapor'); ?>">Pelaporan</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
             </ul>
           </li>
           <li class="drop-down"><a href="#">Pemerintah</a>
             <ul>
-              <li><a href="#">Sturktur Pemerintah</a></li>
+              <li><a href="<?php echo base_url('User/infodes'); ?>">Sturktur Pemerintah</a></li>
               <li><a href="#statistik">Statistik Desa</a></li>
               <li><a href="#">Profil Desa</a></li>
               <li><a href="#">BUMDES</a></li>
@@ -64,10 +63,8 @@
           </li>
 
           <li class="active"><a href="#apbdes">APBDes</a></li>
-          <li><a href="<?php echo base_url('User/infodes'); ?>">Info Desa</a></li>
           <li><a href="<?php echo base_url('User/kegiatan'); ?>">Kegiatan</a></li>
           <li><a href="contact.html"></a></li>
-
         </ul>
 
       </nav><!-- .nav-menu -->

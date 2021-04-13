@@ -4,7 +4,7 @@
             <div class="main-content">
 
                 <div class="page-content">
-                    
+
                     <!-- Page-Title -->
                     <div class="page-title-box">
                         <div class="container-fluid">
@@ -21,20 +21,19 @@
                     <div class="page-content-wrapper">
                         <div class="container-fluid">
                             <div class="row">
-        
+
                                 <div class="col">
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="header-title mb-4">Buat Pengajuan Surat</h5>
 
-                                            <?php 
-                                                if($this->session->flashdata('error') !='')
-                                                {
-                                                    echo '<div class="alert alert-primary" role="alert">';
-                                                    echo $this->session->flashdata('error');
-                                                    echo '</div>';
-                                                }
-                                            ?>
+                                            <?php
+if ($this->session->flashdata('error') != '') {
+    echo '<div class="alert alert-primary" role="alert">';
+    echo $this->session->flashdata('error');
+    echo '</div>';
+}
+?>
 
                                             <form method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>Surat/save">
 
@@ -81,13 +80,15 @@
                                                         <option disabled="disabled" selected>Pilih jenis surat</option>
                                                         <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
                                                         <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
-                                                        <option value="Surat Keterangan Miskin">Surat Keterangan Miskin</option>
-                                                        <option value="Surat Keterangan Belum Pernah Menikah">Surat Keterangan Belum Pernah Menikah</option>
+                                                        <option value="Surat Keterangan Miskin">Surat Keterangan Kematian</option>
+                                                        <option value="Surat Keterangan Belum Pernah Menikah">Surat Izin Acara</option>
                                                         <option value="Surat Keterangan Kelahiran">Surat Keterangan Kelahiran</option>
-                                                        <option value="Surat Keterangan Kematian">Surat Keterangan Kematian</option>
-                                                        <option value="Surat Keterangan Beda Nama">Surat Keterangan Beda Nama</option>
-                                                        <option value="Surat Keterangan Penghasilan">Surat Keterangan Penghasilan</option>
-                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Harga Tanah</option>
+                                                        <option value="Surat Keterangan Kematian">Surat Keterangan Domisili Penduduk</option>
+                                                        <option value="Surat Keterangan Beda Nama">Surat Pengantar Pembuatan KTP</option>
+                                                        <option value="Surat Keterangan Penghasilan">Surat Pengantar Pembuatan KK</option>
+                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Pindah Tempat</option>
+                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Izin Orang Tua</option>
+                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Menikah</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -108,7 +109,7 @@
                                         </div>
                                     </div>
                                 </div>
-        
+
                             </div>
                             <!-- end row -->
 

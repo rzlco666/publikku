@@ -90,8 +90,8 @@ class Profil extends CI_Controller
             $config['max_size'] = '2048';
             $config['width'] = 400;
             $config['height'] = 400;
-            $config['create_thumb'] = TRUE;
-            $config['maintain_ratio'] = TRUE;
+            $config['create_thumb'] = true;
+            $config['maintain_ratio'] = true;
             $config['upload_path'] = './assets_user/images/users';
 
             $this->load->library('upload', $config);

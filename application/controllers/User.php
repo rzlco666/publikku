@@ -28,12 +28,6 @@ class User extends CI_Controller
         $this->load->view('kegiatan/kegiatan');
         $this->load->view('home/footer');
     }
-    public function lapor()
-    {
-        $this->load->view('home/header');
-        $this->load->view('surat/lapor');
-        $this->load->view('home/footer');
-    }
     public function pekerjaan()
     {
         $this->load->view('home/header');
@@ -68,6 +62,24 @@ class User extends CI_Controller
     {
         $this->load->view('home/header');
         $this->load->view('infodes/umur');
+        $this->load->view('home/footer');
+    }
+    public function realisasi()
+    {
+        $this->load->view('home/header');
+        $this->load->view('apbdes/apbdes');
+        $this->load->view('home/footer');
+    }
+    public function transparasi()
+    {
+        $this->load->view('home/header');
+        $this->load->view('apbdes/apbdes2');
+        $this->load->view('home/footer');
+    }
+    public function lapor()
+    {
+        $this->load->view('home/header');
+        $this->load->view('surat/lapor');
         $this->load->view('home/footer');
     }
 

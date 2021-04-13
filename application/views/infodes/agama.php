@@ -37,37 +37,37 @@
           <tr class=''>
             <td class='text-right'>1</td>
             <td>ISLAM</td>
-            <td class='text-right'>39</td>
+            <td class='text-right'>3981</td>
           </tr>
           <tr class=''>
             <td class='text-right'>2</td>
             <td>KRISTEN</td>
-            <td class='text-right'>1</td>
+            <td class='text-right'>231</td>
           </tr>
           <tr class=''>
             <td class='text-right'>3</td>
             <td>KATHOLIK</td>
-            <td class='text-right'>1</td>
+            <td class='text-right'>106</td>
           </tr>
           <tr class=''>
             <td class='text-right'>4</td>
             <td>HINDU</td>
-            <td class='text-right'>10</td>
+            <td class='text-right'>4</td>
           </tr>
           <tr class=''>
             <td class='text-right'>5</td>
             <td>BUDHA</td>
-            <td class='text-right'>1</td>
+            <td class='text-right'>0</td>
           </tr>
           <tr class=''>
             <td class='text-right'>6</td>
             <td>KHONGHUCU</td>
-            <td class='text-right'>1</td>
+            <td class='text-right'>0</td>
           </tr>
           <tr class=''>
             <td class='text-right'>7</td>
             <td>Kepercayaan Terhadap Tuhan YME / Lainnya</td>
-            <td class='text-right'>1</td>
+            <td class='text-right'>0</td>
           </tr>
         </tbody>
       </table>
@@ -98,7 +98,7 @@
           ],
         datasets: [{
           // Jumlah Value yang ditampilkan
-           data:[39,1,1,10,1,1,1],
+           data:[3981,231,106,4,0,0,0],
 
           backgroundColor:[
                  'rgba(255,0,0, 0.5)',

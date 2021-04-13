@@ -21,7 +21,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/bg.png)">
+        <div class="carousel-item" style="background-image: url(assets/img/slide/s1.JPG)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Visi dan Misi</h2>
@@ -30,21 +30,21 @@
                 tata kelola yang baik, mewujudkan kualitas SDM, mewujudkan peningkatan potensi SDA di bidang pertanian,
                 mewujudkan kemandirian perekonomian masyarakat, mewujudkan pembangunan yang terencana merata dan
                 berkelanjutan, mewujudkan rasa persatuan, gotong royong dan pemberdayaan karang taruna</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto"> Info
+              <a href="<?php echo base_url('User/infodes'); ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"> Info
                 Selengkapnya</a>
             </div>
           </div>
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/kden.jpeg)">
+        <div class="carousel-item" style="background-image: url(assets/img/slide/s3.JPG)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Berita Desa</h2>
               <p class="animate__animated animate__fadeInUp">halaman ini berisi berita, informasi dan pengumuman baik
                 urusan pemerintah, kesehatan, teknologi ataupun lainnya yang
                 berada di Desa Keden. Info desa ini dikelola oleh pemerintah desa keden.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Berita</a>
+              <a href="<?php echo base_url('User/kegiatan'); ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto">Berita</a>
             </div>
           </div>
         </div>
@@ -75,23 +75,18 @@
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0">
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+            Dengan adanya fitur pelayanan ini, kami mengharapkan masyarakat dapat ikut serta berpartisipasi dalam rangka mewujudkan desa cerdas atau smart village dan juga membantu pelayanan pemerintah.
           </p>
           <ul>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-              aute irure dolor in reprehenderit in</li>
+            <li><i class="ri-check-double-line"></i> Pelayanan pelaporan dan aspirasi masyarakat Desa Keden</li>
+            <li><i class="ri-check-double-line"></i> Pelayanan pengajuan surat online masyarakat Desa Keden</li>
           </ul>
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
               <a href="<?php echo base_url('User/surat'); ?>" class="btn btn-secondary">Pengajuan Surat</a>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
-              <a href="#lapor" class="btn btn-secondary animate__animated animate__fadeInUp scrollto">LAPOR!</a>
+              <a href="<?php echo base_url('User/lapor'); ?>" class="btn btn-secondary animate__animated animate__fadeInUp scrollto">LAPOR!</a>
             </div>
           </div>
         </div>
@@ -112,26 +107,25 @@
 
         <div class="col-lg-4">
           <div class="box">
-            <a href=""><span>Realisasi APBdes</span></a>
+            <a href="<?php echo base_url('User/realisasi'); ?>"><span>Realisasi APBdes</span></a>
             <h4>2020</h4>
-            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            <p>Berikut merupakan realisasi anggaran pendapatan dan belanja desa tahun 2020</p>
           </div>
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="box">
-            <span>APBDes 2021</span>
-            <h4>2020</h4>
-            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para
-              dest</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 mt-4 mt-lg-0">
-          <div class="box">
-            <span>Perubahan APBdes</span>
+          <a href="<?php echo base_url('User/transparasi'); ?>"><span>APBDes 2021</span></a>
             <h4>2021</h4>
-            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+            <p>Berikut merupakan transparasi anggaran pendapatan dan belanja desa tahun 2021</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box">
+          <a href=""><span>Perubahan APBdes</span></a>
+            <h4>2020</h4>
+            <p>Berikut merupakan perubahan anggaran pendapatan dan belanja desa tahun 2020</p>
           </div>
         </div>
 
@@ -154,23 +148,21 @@
           <div class="icon-box">
             <i class="icofont-worker"></i>
             <h4><a href="<?php echo base_url('User/pekerjaan'); ?>">Data Pekerjaan</a></h4>
-            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate
-              non provident</p>
+            <p>Klik untuk menampilkan statistik data pekerjaan Desa Keden</p>
           </div>
         </div>
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-chart-bar-graph"></i>
             <h4><a href="<?php echo base_url('User/umur'); ?>">Statistik Umur</a></h4>
-            <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad
-              limino ata</p>
+            <p>Klik untuk menampilkan statistik data umur Desa Keden </p>
           </div>
         </div>
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-heart"></i>
             <h4><a href="<?php echo base_url('User/agama'); ?>">Data Agama</a></h4>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+            <p>Klik untuk menampilkan statistik data agama Desa Keden
             </p>
           </div>
         </div>
@@ -178,24 +170,21 @@
           <div class="icon-box">
             <i class="icofont-library"></i>
             <h4><a href="<?php echo base_url('User/pendidikan'); ?>">Data Pendidikan</a></h4>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum</p>
+            <p>Klik untuk menampilkan statistik data pendidikan Desa Keden</p>
           </div>
         </div>
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-earth"></i>
             <h4><a href="<?php echo base_url('User/wilayah'); ?>">Data Wilayah</a></h4>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-              deleniti atque</p>
+            <p>Klik untuk menampilkan statistik data wilayah Desa Keden</p>
           </div>
         </div>
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="icofont-users-alt-4"></i>
             <h4><a href="<?php echo base_url('User/kelamin'); ?>">Data Jenis Kelamin</a></h4>
-            <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-              eligendi</p>
+            <p>Klik untuk menampilkan statistik data jenis kelamin Desa Keden</p>
           </div>
         </div>
       </div>
@@ -204,37 +193,6 @@
   </section><!-- End Services Section -->
 
   <!-- ======= Portfolio Section ======= -->
-  <section id="lapor" class="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Form Laporan</h2>
-        <p>LAPOR!</p>
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Isi Laporan</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Waktu</label>
-            <input type="time" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Tanggal</label>
-            <input type="date" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect2">Lokasi</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlFile1">Bukti Foto</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-          </div>
-          <button type="submit" class="btn btn-danger ">Submit</button>
-        </form>
-      </div>
-    </div>
-  </section><!-- End Portfolio Section -->
 
   </main><!-- End #main -->
 

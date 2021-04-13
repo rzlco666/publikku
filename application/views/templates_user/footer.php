@@ -19,7 +19,7 @@
         }
             </style>
 
-    <a href="https://api.whatsapp.com/send?phone=08817819040&text=Saya%20mau%20bertanya%20tentang" class="float" target="_blank">
+    <a href="https://wa.me/+6282135314164" class="float" target="_blank">
         <i class="mdi mdi-whatsapp my-float text-white"></i>
     </a>
 

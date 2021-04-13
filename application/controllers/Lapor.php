@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Lapor extends CI_Controller
 {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->load->model('authen');
@@ -58,8 +58,8 @@ class Lapor extends CI_Controller
                 $config['max_size'] = '15048';
                 $config['width'] = 400;
                 $config['height'] = 400;
-                $config['create_thumb'] = TRUE;
-                $config['maintain_ratio'] = TRUE;
+                $config['create_thumb'] = true;
+                $config['maintain_ratio'] = true;
                 $config['upload_path'] = './assets_user/images/laporan';
 
                 $this->load->library('upload', $config);
@@ -110,8 +110,8 @@ class Lapor extends CI_Controller
                 $config['max_size'] = '15048';
                 $config['width'] = 400;
                 $config['height'] = 400;
-                $config['create_thumb'] = TRUE;
-                $config['maintain_ratio'] = TRUE;
+                $config['create_thumb'] = true;
+                $config['maintain_ratio'] = true;
                 $config['upload_path'] = './assets_user/images/laporan';
 
                 $this->load->library('upload', $config);
@@ -141,7 +141,7 @@ class Lapor extends CI_Controller
         }
     }
 
-    function edit($id_fitur)
+    public function edit($id_fitur)
     {
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
@@ -153,10 +153,10 @@ class Lapor extends CI_Controller
         $this->load->view('templates_user/footer');
     }
 
-    function delete($id_fitur)
+    public function delete($id_fitur)
     {
         $this->laporan->delete($id_fitur);
-        $this->session->set_flashdata('success_ubah', 'Data Berhasil Dihapus');
+        $this->session->set_flashdata('success_ubah', 'Data Berhasil Dibatalkan');
         redirect('Lapor');
     }
 }
