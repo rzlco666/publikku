@@ -47,7 +47,7 @@
 
         <ul>
 
-          <li class="drop-down"><a href="#">Fitur</a>
+          <li class="drop-down"><a href="#">Pelayanan</a>
             <ul>
               <li><a href="<?php echo base_url('User/surat'); ?>">Permintaan Surat Keterangan</a></li>
               <li><a href="<?php echo base_url('User/lapor'); ?>">Pelaporan</a></li>
@@ -71,11 +71,10 @@
         </ul>
 
       </nav><!-- .nav-menu -->
-      <?php 
+      <?php
 
-        if(empty($this->session->userdata('is_login')))
-        {
-          ?>
+if (empty($this->session->userdata('is_login'))) {
+    ?>
           <div class="dropdown ml-auto">
             <button style="outline: none; border-style: none;" class="get-started-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Login
@@ -88,15 +87,15 @@
           </div>
           <a href="<?=base_url('Auth/daftar'); ?>" class="get-started-btn">Register</a>
       <?php
-        }else{
-          ?>
+} else {
+    ?>
           <a href="<?=base_url('Dashboard'); ?>" class="get-started-btn ml-auto">Dashboard</a>
       <?php
-      
-        }
 
-      ?>
-      
+}
+
+?>
+
 
     </div>
   </header><!-- End Header -->
