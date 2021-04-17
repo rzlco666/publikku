@@ -75,5 +75,11 @@ class Pengajuan extends CI_Model
         return $this->db->delete($this->table, array("id_surat" => $id_surat));
     }
 
+    public function getAllJenis()
+    {
+        $id_user = $this->session->userdata('id_user');
+        return $this->db->get("kategorisurat")->result_array();
+    }
+
 }
 ?>

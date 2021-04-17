@@ -63,7 +63,9 @@ class Laporan extends CI_Model
     public function getByLapo()
     {
         $this->db->select('id_fitur, COUNT(id_fitur) as total');
-        $query = $this->db->get_where($this->table, ["jenis" => "Pelaporan"]);
+        $this->db->from('fitur');
+        $this->db->where('jenis !=', 'Aspirasi');
+        $query = $this->db->get();
         if($query->num_rows()>0)
         {
             return $query->row();
@@ -104,6 +106,12 @@ class Laporan extends CI_Model
     {
         $id_user = $this->session->userdata('id_user');
         return $this->db->get_where("notifikasi", ["id_receiver" => $id_user])->result();
+    }
+
+    public function getAllJenis()
+    {
+        $id_user = $this->session->userdata('id_user');
+        return $this->db->get("kategori")->result_array();
     }
 
 }

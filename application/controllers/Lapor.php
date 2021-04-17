@@ -25,6 +25,7 @@ class Lapor extends CI_Controller
 
     public function create()
     {
+        $data['jenis_laporan'] = $this->laporan->getAllJenis();
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
         $data['notifikasi'] = $this->laporan->getAllNotif();
@@ -143,6 +144,7 @@ class Lapor extends CI_Controller
 
     public function edit($id_fitur)
     {
+        $data['jenis_laporan'] = $this->laporan->getAllJenis();
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
         $data['notifikasi'] = $this->laporan->getAllNotif();

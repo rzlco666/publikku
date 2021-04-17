@@ -26,6 +26,7 @@ class Surat extends CI_Controller
 
     public function create()
     {
+        $data['jenis_surat'] = $this->pengajuan->getAllJenis();
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
         $data['notifikasi'] = $this->laporan->getAllNotif();
@@ -90,6 +91,7 @@ class Surat extends CI_Controller
 
     public function edit($id_surat)
     {
+        $data['jenis_surat'] = $this->pengajuan->getAllJenis();
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
         $data['notifikasi'] = $this->laporan->getAllNotif();

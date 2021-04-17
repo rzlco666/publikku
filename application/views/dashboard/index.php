@@ -150,6 +150,7 @@
                                     <div class="form-group row">
                                         <label for="lokasi" class="col-md-2 col-form-label">Lokasi</label>
                                         <div class="col-md-10">
+                                            *Masukan Lokasi kejadian RT/RW dan dan titik tepatnya kejadian (contoh : Dk Krangkeng RT 01 RW 05, Depan Masjid AN-Nur)
                                             <input type="hidden" name="id_user" value="<?php echo $this->session->userdata('id_user'); ?>">
                                             <input class="form-control" type="text" name="lokasi" id="lokasi">
                                         </div>
@@ -177,8 +178,9 @@
                                                 <div class="col-md-10">
                                                     <select name="jenis" class="custom-select">
                                                         <option disabled="disabled" selected>Pilih jenis pelaporan</option>
-                                                        <option value="Aspirasi">Aspirasi</option>
-                                                        <option value="Pelaporan">Pelaporan</option>
+                                                        <?php foreach ($jenis_laporan as $jenis): ?>
+                                                        <option value="<?php echo $jenis['kategori'] ?>"><?php echo $jenis['kategori'] ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                      </div>
@@ -299,15 +301,9 @@
                                         <div class="col-md-10">
                                             <select name="jenis" class="custom-select">
                                                 <option disabled="disabled" selected>Pilih jenis surat</option>
-                                                <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
-                                                <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
-                                                <option value="Surat Keterangan Miskin">Surat Keterangan Miskin</option>
-                                                <option value="Surat Keterangan Belum Pernah Menikah">Surat Keterangan Belum Pernah Menikah</option>
-                                                <option value="Surat Keterangan Kelahiran">Surat Keterangan Kelahiran</option>
-                                                <option value="Surat Keterangan Kematian">Surat Keterangan Kematian</option>
-                                                <option value="Surat Keterangan Beda Nama">Surat Keterangan Beda Nama</option>
-                                                <option value="Surat Keterangan Penghasilan">Surat Keterangan Penghasilan</option>
-                                                <option value="Surat Keterangan Harga Tanah">Surat Keterangan Harga Tanah</option>
+                                                <?php foreach ($jenis_surat as $jeniss): ?>
+                                                    <option value="<?php echo $jeniss['kategorisurat'] ?>"><?php echo $jeniss['kategorisurat'] ?></option>
+                                                <?php endforeach; ?>
                                             </select>
                                         </div>
                                     </div>

@@ -28,21 +28,21 @@
                                  <p class="card-title-desc"><a class="btn btn-primary waves-effect waves-light" href="<?php echo base_url(); ?>Lapor/create/">Buat Laporan</a>
                                  </p>
 
-                                 <?php
-if ($this->session->flashdata('error') != '') {
-    echo '<div class="alert alert-primary" role="alert">';
-    echo $this->session->flashdata('error');
-    echo '</div>';
-}
-?>
+                                <?php
+                                if ($this->session->flashdata('error') != '') {
+                                    echo '<div class="alert alert-primary" role="alert">';
+                                    echo $this->session->flashdata('error');
+                                    echo '</div>';
+                                }
+                                ?>
 
-                                 <?php
-if ($this->session->flashdata('success_ubah') != '') {
-    echo '<div class="alert alert-success" role="alert">';
-    echo $this->session->flashdata('success_ubah');
-    echo '</div>';
-}
-?>
+                                <?php
+                                if ($this->session->flashdata('success_ubah') != '') {
+                                    echo '<div class="alert alert-success" role="alert">';
+                                    echo $this->session->flashdata('success_ubah');
+                                    echo '</div>';
+                                }
+                                ?>
 
                                  <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                      <thead>
@@ -64,10 +64,10 @@ if ($this->session->flashdata('success_ubah') != '') {
 
 
                                      <tbody>
-                                         <?php
-$no = 1;
-foreach ($laporan as $row) {
-    ?>
+                                        <?php
+                                        $no = 1;
+                                        foreach ($laporan as $row) {
+                                        ?>
                                              <tr>
                                                  <td><?php echo $no++; ?></td>
                                                  <td><?php echo $row->isi_lapor; ?></td>
@@ -79,66 +79,66 @@ foreach ($laporan as $row) {
                                                  <td><?php echo $row->jenis; ?></td>
                                                  <td>
                                                     <?php
-$fot = $row->foto;
-    $cek = substr($fot, -4);
+                                                    $fot = $row->foto;
+                                                        $cek = substr($fot, -4);
 
-    if ($cek == 'jpeg' || $cek == ".jpg" || $cek == ".png") {
-        ?>
+                                                        if ($cek == 'jpeg' || $cek == ".jpg" || $cek == ".png") {
+                                                            ?>
                                                             <img width="150px" src="<?=base_url('assets_user/images/laporan/' . $row->foto) ?>">
                                                             <?php
-} else {
-        ?>
+                                                            } else {
+                                                            ?>
                                                             <video width="350px" controls="controls" src="<?=base_url('assets_user/images/laporan/' . $row->foto) ?>"></video>
                                                             <?php
-}
+                                                            }
 
-    ?>
+                                                            ?>
                                                  </td>
                                                  <td>
                                                      <?php
-$stat = $row->status;
-    if ($stat == "Selesai") {
-        ?> <a href="<?php echo base_url(); ?>Rating/edit/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Beri Rating</a> <?php
-} elseif ($stat == "Diproses") {
-        echo "Sedang Diproses";
-    } else {
-        ?>
+                                                        $stat = $row->status;
+                                                            if ($stat == "Selesai") {
+                                                                ?> <a href="<?php echo base_url(); ?>Rating/edit/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Beri Rating</a> <?php
+                                                            } elseif ($stat == "Diproses") {
+                                                                echo "Sedang Diproses";
+                                                            } else {
+                                                    ?>
                                                          <a href="<?php echo base_url(); ?>Lapor/edit/<?php echo $row->id_fitur; ?>" class="btn btn-danger">Edit</a>
                                                          <a href="<?php echo base_url(); ?>Lapor/delete/<?php echo $row->id_fitur; ?>" class="btn btn-primary">Batalkan</a> <?php
-} ?>
+                                                            } ?>
                                                  </td>
                                                  <td>
                                                      <?php
-$rat = $row->status;
-    if ($rat == "Selesai") {
-        $rati = $row->rating;
-        if ($rati > 0) {
-            ?> <input type="hidden" class="rating" data-filled="mdi mdi-star text-primary" data-empty="mdi mdi-star-outline text-muted" data-readonly value="<?php echo $row->rating; ?>" />
-                                                     <?php
-} else {
-            echo "Belum diberi rating";
-        }
-    } else {
-        echo "Sedang ";
-        echo $row->status;
-    }
-    ?>
+                                                        $rat = $row->status;
+                                                            if ($rat == "Selesai") {
+                                                                $rati = $row->rating;
+                                                                if ($rati > 0) {
+                                                                    ?> <input type="hidden" class="rating" data-filled="mdi mdi-star text-primary" data-empty="mdi mdi-star-outline text-muted" data-readonly value="<?php echo $row->rating; ?>" />
+                                                    <?php
+                                                        } else {
+                                                                    echo "Belum diberi rating";
+                                                                }
+                                                            } else {
+                                                                echo "Sedang ";
+                                                                echo $row->status;
+                                                            }
+                                                            ?>
                                                  </td>
                                                  <td>
                                                      <?php
-$feed = $row->status;
-    if ($feed == "Selesai") {
-        echo $row->feedback;
-    } else {
-        echo "Sedang ";
-        echo $row->status;
-    }
-    ?>
+                                                    $feed = $row->status;
+                                                        if ($feed == "Selesai") {
+                                                            echo $row->feedback;
+                                                        } else {
+                                                            echo "Sedang ";
+                                                            echo $row->status;
+                                                        }
+                                                        ?>
                                                  </td>
                                              </tr>
-                                         <?php
-}
-?>
+                                                        <?php
+                                                        }
+                                                        ?>
                                      </tbody>
                                  </table>
 

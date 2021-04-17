@@ -76,12 +76,9 @@ if ($this->session->flashdata('error') != '') {
                                                 <div class="col-md-10">
                                                     <select name="jenis" class="custom-select">
                                                         <option disabled="disabled" selected>Pilih jenis pelaporan</option>
-                                                        <option value="Aspirasi">Aspirasi</option>
-                                                        <option value="Pelaporan">Banjir</option>
-                                                        <option value="Pelaporan">Kebakaran</option>
-                                                        <option value="Pelaporan">Jalan Rusak</option>
-                                                        <option value="Pelaporan">Penyakit</option>
-                                                        <option value="Pelaporan">Longsor</option>
+                                                        <?php foreach ($jenis_laporan as $jenis): ?>
+                                                            <option value="<?php echo $jenis['kategori'] ?>"><?php echo $jenis['kategori'] ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                      </div>

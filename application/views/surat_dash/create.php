@@ -78,17 +78,9 @@ if ($this->session->flashdata('error') != '') {
                                                 <div class="col-md-10">
                                                     <select name="jenis" class="custom-select">
                                                         <option disabled="disabled" selected>Pilih jenis surat</option>
-                                                        <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
-                                                        <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
-                                                        <option value="Surat Keterangan Miskin">Surat Keterangan Kematian</option>
-                                                        <option value="Surat Keterangan Belum Pernah Menikah">Surat Izin Acara</option>
-                                                        <option value="Surat Keterangan Kelahiran">Surat Keterangan Kelahiran</option>
-                                                        <option value="Surat Keterangan Kematian">Surat Keterangan Domisili Penduduk</option>
-                                                        <option value="Surat Keterangan Beda Nama">Surat Pengantar Pembuatan KTP</option>
-                                                        <option value="Surat Keterangan Penghasilan">Surat Pengantar Pembuatan KK</option>
-                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Pindah Tempat</option>
-                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Izin Orang Tua</option>
-                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Menikah</option>
+                                                        <?php foreach ($jenis_surat as $jeniss): ?>
+                                                            <option value="<?php echo $jeniss['kategorisurat'] ?>"><?php echo $jeniss['kategorisurat'] ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
