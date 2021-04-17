@@ -56,13 +56,13 @@
           <li class="drop-down"><a href="#">Pemerintah</a>
             <ul>
               <li><a href="<?php echo base_url('User/infodes'); ?>">Sturktur Pemerintah</a></li>
-              <li><a href="#statistik">Statistik Desa</a></li>
+              <li><a href="<?php echo base_url('User#statistik'); ?>">Statistik Desa</a></li>
               <li><a href="#">Profil Desa</a></li>
               <li><a href="#">BUMDES</a></li>
             </ul>
           </li>
 
-          <li class="active"><a href="#apbdes">APBDes</a></li>
+          <li class="active"><a href="<?php echo base_url('User#apbdes'); ?>">APBDes</a></li>
           <li><a href="<?php echo base_url('User/kegiatan'); ?>">Kegiatan</a></li>
           <li><a href="contact.html"></a></li>
         </ul>
