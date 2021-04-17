@@ -70,4 +70,15 @@ class Authen extends CI_Model
         );
         $this->db->update('user', $data_user, array('id_user' => $id_user));
     }
+
+    public function lupa($hp, $password, $username, $KTP)
+    {
+        $data_user = array(
+            'hp' => $hp,
+            'password' => $password,
+            'username' => $username,
+            'KTP' => $KTP
+        );
+        $this->db->update('user', $data_user, array('KTP' => $KTP));
+    }
 }

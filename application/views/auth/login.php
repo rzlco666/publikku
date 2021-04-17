@@ -22,30 +22,30 @@
                                 <div class="p-2">
                                     <h5 class="mb-5 text-center">Silahkan Login untuk melanjutkan.</h5>
                                     <?php
-if ($this->session->flashdata('error') != '') {
-    echo '<div class="alert alert-primary" role="alert">';
-    echo $this->session->flashdata('error');
-    echo '</div>';
-}
-?>
+                                    if ($this->session->flashdata('error') != '') {
+                                        echo '<div class="alert alert-primary" role="alert">';
+                                        echo $this->session->flashdata('error');
+                                        echo '</div>';
+                                    }
+                                    ?>
 
-<?php
-if ($this->session->flashdata('success_register') != '') {
-    echo '<div class="alert alert-success" role="alert">';
-    echo $this->session->flashdata('success_register');
-    echo '</div>';
+                                    <?php
+                                    if ($this->session->flashdata('success_register') != '') {
+                                        echo '<div class="alert alert-success" role="alert">';
+                                        echo $this->session->flashdata('success_register');
+                                        echo '</div>';
 
-}
-?>
+                                    }
+                                    ?>
 
-<?php
-if ($this->session->flashdata('alert') != '') {
-    echo '<div class="alert alert-success" role="alert">';
-    echo $this->session->flashdata('alert');
-    echo '</div>';
+                                    <?php
+                                    if ($this->session->flashdata('alert') != '') {
+                                        echo '<div class="alert alert-success" role="alert">';
+                                        echo $this->session->flashdata('alert');
+                                        echo '</div>';
 
-}
-?>
+                                    }
+                                    ?>
                                     <form method="post" class="form-horizontal" action="<?php echo base_url('Auth/proses_login'); ?>">
 
                                         <div class="row">
@@ -63,8 +63,17 @@ if ($this->session->flashdata('alert') != '') {
                                                 <div class="mt-4">
                                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Masuk</button>
                                                 </div>
-                                                <div class="mt-4 text-center">
-                                                    <a href="<?=base_url('Auth/daftar'); ?>" class="text-muted"><i class="mdi mdi-account-circle mr-1"></i> Belum punya akun? daftar sekarang</a>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="mt-4">
+                                                            <a href="<?=base_url('Auth/daftar'); ?>" class="text-muted"><i class="mdi mdi-account-circle mr-1"></i> Daftar sekarang</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="mt-4 text-right">
+                                                            <a href="<?=base_url('Auth/lupa'); ?>" class="text-muted">Lupa password?</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

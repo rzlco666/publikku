@@ -67,4 +67,31 @@ class Auth extends CI_Controller
             redirect('Auth/daftar');
         }
     }
+
+    public function lupa()
+    {
+        $this->load->view('auth/header');
+        $this->load->view('auth/forget');
+        $this->load->view('auth/footer');
+    }
+
+    public function proses_lupa()
+    {
+        $this->form_validation->set_rules('hp', 'hp', 'trim|required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('KTP', 'KTP', 'trim|required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('username', 'username', 'trim|required|min_length[1]|max_length[255]');
+        if ($this->form_validation->run() == true) {
+            $hp = $this->input->post('hp');
+            $password = $this->input->post('password');
+            $username = $this->input->post('username');
+            $KTP = $this->input->post('KTP');
+            $this->authen->lupa($hp, $password, $username, $KTP, $foto);
+            $this->session->set_flashdata('success_register', 'Proses Reset Password Berhasil');
+            redirect('Auth/login');
+        } else {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect('Auth/lupa');
+        }
+    }
 }
