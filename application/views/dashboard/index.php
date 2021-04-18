@@ -178,9 +178,15 @@
                                                 <div class="col-md-10">
                                                     <select name="jenis" class="custom-select">
                                                         <option disabled="disabled" selected>Pilih jenis pelaporan</option>
-                                                        <?php foreach ($jenis_laporan as $jenis): ?>
-                                                        <option value="<?php echo $jenis['kategori'] ?>"><?php echo $jenis['kategori'] ?></option>
-                                                        <?php endforeach; ?>
+                                                        <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
+                                                        <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
+                                                        <option value="Surat Keterangan Miskin">Surat Keterangan Miskin</option>
+                                                        <option value="Surat Keterangan Belum Pernah Menikah">Surat Keterangan Belum Pernah Menikah</option>
+                                                        <option value="Surat Keterangan Kelahiran">Surat Keterangan Kelahiran</option>
+                                                        <option value="Surat Keterangan Kematian">Surat Keterangan Kematian</option>
+                                                        <option value="Surat Keterangan Beda Nama">Surat Keterangan Beda Nama</option>
+                                                        <option value="Surat Keterangan Penghasilan">Surat Keterangan Penghasilan</option>
+                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Harga Tanah</option>
                                                     </select>
                                                 </div>
                                      </div>
