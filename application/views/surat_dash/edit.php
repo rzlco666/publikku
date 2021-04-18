@@ -71,18 +71,28 @@
                                                         <option disabled="disabled" selected>Pilih jenis surat</option>
                                                         <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
                                                         <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
-                                                        <option value="Surat Keterangan Miskin">Surat Keterangan Kematian</option>
-                                                        <option value="Surat Keterangan Belum Pernah Menikah">Surat Izin Acara</option>
+                                                        <option value="Surat Keterangan Kematian">Surat Keterangan Kematian</option>
+                                                        <option value="Surat Izin Acara">Surat Izin Acara</option>
                                                         <option value="Surat Keterangan Kelahiran">Surat Keterangan Kelahiran</option>
-                                                        <option value="Surat Keterangan Kematian">Surat Keterangan Domisili Penduduk</option>
-                                                        <option value="Surat Keterangan Beda Nama">Surat Pengantar Pembuatan KTP</option>
-                                                        <option value="Surat Keterangan Penghasilan">Surat Pengantar Pembuatan KK</option>
-                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Pindah Tempat</option>
-                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Izin Orang Tua</option>
-                                                        <option value="Surat Keterangan Harga Tanah">Surat Keterangan Menikah</option>
+                                                        <option value="Surat Keterangan Domisili Penduduk">Surat Keterangan Domisili Penduduk</option>
+                                                        <option value="Surat Pengantar Pembuatan KTP">Surat Pengantar Pembuatan KTP</option>
+                                                        <option value="Surat Pengantar Pembuatan KK">Surat Pengantar Pembuatan KK</option>
+                                                        <option value="Surat Keterangan Pindah Tempat">Surat Keterangan Pindah Tempat</option>
+                                                        <option value="Surat Keterangan Izin Orang Tua">Surat Keterangan Izin Orang Tua</option>
+                                                        <option value="Surat Keterangan Menikah">Surat Keterangan Menikah</option>
                                                     </select>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                 <label class="col-md-2 col-form-label">Upload Foto/PDF KTP</label>
+                                                 <div class="col-md-10">
+                                                     <div class="custom-file">
+                                                         <input type="file" name="image" class="custom-file-input" id="image" required data-toggle="tooltip" data-placement="bottom" title="Ukuran maksimal 15 MB">
+                                                         <label class="custom-file-label" for="validationCustomFile">Upload foto/pdf KTP *ukuran maksimal 15 MB</label>
+                                                     </div>
+                                                 </div>
+                                             </div>
 
                                             <div class="form-group row">
                                                 <label class="col-md-2 col-form-label">Pesan</label>

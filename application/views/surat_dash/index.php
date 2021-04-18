@@ -53,6 +53,7 @@ if ($this->session->flashdata('success_ubah') != '') {
                                                     <th>Nama</th>
                                                     <th>Tanggal</th>
                                                     <th>Jenis Surat</th>
+                                                    <th>KTP</th>
                                                     <th>Status</th>
                                                     <th>Waktu Update</th>
                                                     <th>Pesan</th>
@@ -74,6 +75,27 @@ foreach ($surat as $row) {
                                                     <td><?php echo $row->nama; ?></td>
                                                     <td><?php echo $row->tanggal; ?></td>
                                                     <td><?php echo $row->jenis; ?></td>
+                                                    <td>
+                                                        <?php
+                                                    $fot = $row->foto;
+                                                        $cek = substr($fot, -4);
+
+                                                        if ($cek == 'jpeg' || $cek == ".jpg" || $cek == ".png") {
+                                                            ?>
+                                                            <img width="150px" src="<?=base_url('assets_user/images/surat/' . $row->foto) ?>">
+                                                            <?php
+                                                            } elseif ($cek == '.pdf') {
+                                                            ?>
+                                                                <a class="btn btn-primary" href="<?=base_url('assets_user/images/surat/' . $row->foto) ?>" target="_blank">Klik disini</a>
+                                                            <?php
+                                                            }else {
+                                                            ?>
+                                                            <video width="350px" controls="controls" src="<?=base_url('assets_user/images/surat/' . $row->foto) ?>"></video>
+                                                            <?php
+                                                            }
+
+                                                            ?>
+                                                    </td>
                                                     <td><?php echo $row->status; ?></td>
                                                     <td><?php echo $row->waktu_update; ?></td>
                                                     <td><?php echo $row->deskripsi; ?></td>
