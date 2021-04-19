@@ -17,6 +17,7 @@ class Dashboard extends CI_Controller
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
         $data['notifikasi'] = $this->laporan->getAllNotif();
+        $data['invoice']=$this->pengajuan->get_no_invoice();
 
         $data['laporan'] = $this->laporan->getByTotal();
         $data['laporan2'] = $this->laporan->getByProses();

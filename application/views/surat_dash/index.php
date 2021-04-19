@@ -53,9 +53,9 @@ if ($this->session->flashdata('success_ubah') != '') {
                                                     <th>Nama</th>
                                                     <th>Tanggal</th>
                                                     <th>Jenis Surat</th>
-                                                    <th>KTP</th>
                                                     <th>Status</th>
                                                     <th>Waktu Update</th>
+                                                    <th>KTP</th>
                                                     <th>Pesan</th>
                                                     <th>Aksi</th>
 
@@ -75,6 +75,8 @@ foreach ($surat as $row) {
                                                     <td><?php echo $row->nama; ?></td>
                                                     <td><?php echo $row->tanggal; ?></td>
                                                     <td><?php echo $row->jenis; ?></td>
+                                                    <td><?php echo $row->status; ?></td>
+                                                    <td><?php echo $row->waktu_update; ?></td>
                                                     <td>
                                                         <?php
                                                     $fot = $row->foto;
@@ -96,14 +98,12 @@ foreach ($surat as $row) {
 
                                                             ?>
                                                     </td>
-                                                    <td><?php echo $row->status; ?></td>
-                                                    <td><?php echo $row->waktu_update; ?></td>
                                                     <td><?php echo $row->deskripsi; ?></td>
                                                     <td>
                                                         <?php
 $stat = $row->status;
     if ($stat == "Selesai") {
-        ?> <a href="<?php echo $row->link; ?>" target="_blank" class="btn btn-primary">Cetak Surat</a> <?php
+        ?> <a href="<?php echo base_url(); ?>Surat/cetak/<?php echo $row->id_surat; ?>" target="_blank" class="btn btn-primary">Cetak Resi Surat</a> <?php
 } elseif ($stat == "Diproses") {
         echo "Sedang diproses";
     } else {

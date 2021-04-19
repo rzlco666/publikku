@@ -60,6 +60,21 @@ class Pengajuan extends CI_Model
         }
     }
 
+    public function get_no_invoice(){
+        $q = $this->db->query("SELECT MAX(RIGHT(nomor_surat,4)) AS kd_max FROM surat WHERE DATE(waktu_update)=CURDATE()");
+        $kd = "";
+        if($q->num_rows()>0){
+            foreach($q->result() as $k){
+                $tmp = ((int)$k->kd_max)+1;
+                $kd = sprintf("%04s", $tmp);
+            }
+        }else{
+            $kd = "0001";
+        }
+        date_default_timezone_set('Asia/Jakarta');
+        return date('dmy').$kd;
+    }
+
     public function save($data)
     {
         return $this->db->insert($this->table, $data);

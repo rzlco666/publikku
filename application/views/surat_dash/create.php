@@ -40,6 +40,7 @@ if ($this->session->flashdata('error') != '') {
                                             <div class="form-group row">
                                                 <label for="lokasi" class="col-md-2 col-form-label">NIK</label>
                                                 <div class="col-md-10">
+                                                    <input class="form-control" hidden="hidden" type="text" name="no_invoice" value="<?php echo $invoice;?>">
                                                     <input class="form-control" type="text" value="<?php echo $user->KTP; ?>" name="nik" id="nik">
                                                 </div>
                                             </div>

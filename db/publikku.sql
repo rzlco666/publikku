@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Apr 2021 pada 14.52
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.3.0
+-- Waktu pembuatan: 19 Apr 2021 pada 08.58
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -81,7 +81,7 @@ CREATE TABLE `fitur` (
   `foto` varchar(255) NOT NULL DEFAULT 'default.png',
   `jenis` text NOT NULL,
   `id_kategori` int(11) NOT NULL,
-  `waktu_update` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `waktu_update` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `rating` int(11) NOT NULL,
   `feedback` text NOT NULL,
   `balasan` varchar(128) NOT NULL,
@@ -97,7 +97,8 @@ CREATE TABLE `fitur` (
 INSERT INTO `fitur` (`id_fitur`, `isi_lapor`, `lokasi`, `status`, `deskripsi`, `tanggal`, `id_dinas`, `foto`, `jenis`, `id_kategori`, `waktu_update`, `rating`, `feedback`, `balasan`, `id`, `id_user`, `id_ins`) VALUES
 (77, '  <p>hghghhg</p>  ', 'Dk Krangkeng RT 01 RW 05, Depan Masjid AN-Nur', 'Selesai', 'Terimakasih atas laporannya. akan segera di tindaklanjuti', '2021-04-09', 3, 'lampu2.jpg', 'Aspirasi', 7, '2021-04-09 15:34:41', 0, '', '', 0, 30, 0),
 (78, '   <p>Jalan rusak</p>   ', 'Dk Krangkeng RT 01 RW 05, Depan Masjid AN-Nur', 'Selesai', 'sudah di kerjakan', '2021-04-09', 1, 'lampu3.jpg', 'Aspirasi', 10, '2021-04-09 15:51:36', 3, 'ok', '', 0, 32, 0),
-(79, ' <p>Lampu roboh</p> ', 'Dk Krangkeng RT 01 RW 05, Depan Masjid AN-Nur', 'Selesai', 'sudah di kerjakan', '2021-04-09', 1, 'lampu4.jpg', 'Aspirasi', 1, '2021-04-09 15:54:55', 4, 'mantap', '', 0, 33, 0);
+(79, ' <p>Lampu roboh</p> ', 'Dk Krangkeng RT 01 RW 05, Depan Masjid AN-Nur', 'Selesai', 'sudah di kerjakan', '2021-04-09', 1, 'lampu4.jpg', 'Aspirasi', 1, '2021-04-09 15:54:55', 4, 'mantap', '', 0, 33, 0),
+(80, '<p>Jelaskan hal yang ingin dilaporkan</p>', 'Masjid', 'Diperiksa', 'Menunggu diperiksa', '2021-04-17', 0, 'default.png', 'Kebakaran', 0, '2021-04-18 16:12:51', 0, '', '', 0, 33, 0);
 
 --
 -- Trigger `fitur`
@@ -190,7 +191,7 @@ CREATE TABLE `notifikasi` (
   `id_notif` int(11) NOT NULL,
   `id_receiver` int(11) NOT NULL,
   `statuss` text NOT NULL,
-  `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tanggal` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `jenis` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -332,7 +333,28 @@ INSERT INTO `notifikasi` (`id_notif`, `id_receiver`, `statuss`, `tanggal`, `jeni
 (133, 33, 'Update Pengajuan Selesai', '2021-04-09 16:00:05', 'Pengajuan'),
 (134, 33, 'Update Pengajuan Selesai', '2021-04-09 16:01:11', 'Pengajuan'),
 (135, 33, 'Update Pengajuan Selesai', '2021-04-12 19:06:17', 'Pengajuan'),
-(136, 32, 'Update Pengajuan Selesai', '2021-04-12 19:07:04', 'Pengajuan');
+(136, 32, 'Update Pengajuan Selesai', '2021-04-12 19:07:04', 'Pengajuan'),
+(137, 33, 'Update Pengajuan Diperiksa', '2021-04-17 13:51:56', 'Pengajuan'),
+(138, 32, 'Update Pengajuan Selesai', '2021-04-18 15:54:45', 'Pengajuan'),
+(139, 33, 'Update Pengajuan Selesai', '2021-04-18 15:54:48', 'Pengajuan'),
+(140, 33, 'Update Pengajuan Diperiksa', '2021-04-18 15:54:50', 'Pengajuan'),
+(141, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:03:35', 'Pengajuan'),
+(142, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:04:52', 'Pengajuan'),
+(143, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:05:45', 'Pengajuan'),
+(144, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:07:27', 'Pengajuan'),
+(145, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:08:38', 'Pengajuan'),
+(146, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:11:49', 'Pengajuan'),
+(147, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:12:10', 'Pengajuan'),
+(148, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:12:36', 'Pengajuan'),
+(149, 33, 'Update Pengajuan Diperiksa', '2021-04-18 16:12:40', 'Pengajuan'),
+(150, 33, 'Update Pelaporan Diperiksa', '2021-04-18 16:12:51', 'Pelaporan'),
+(151, 33, 'Update Pengajuan Selesai', '2021-04-19 12:35:49', 'Pengajuan'),
+(152, 33, 'Update Pengajuan Diperiksa', '2021-04-19 12:47:05', 'Pengajuan'),
+(153, 33, 'Update Pengajuan Selesai', '2021-04-19 12:55:14', 'Pengajuan'),
+(154, 33, 'Update Pengajuan Selesai', '2021-04-19 12:55:27', 'Pengajuan'),
+(155, 33, 'Update Pengajuan Selesai', '2021-04-19 13:55:39', 'Pengajuan'),
+(156, 33, 'Update Pengajuan Selesai', '2021-04-19 13:57:31', 'Pengajuan'),
+(157, 33, 'Update Pengajuan Selesai', '2021-04-19 13:57:37', 'Pengajuan');
 
 -- --------------------------------------------------------
 
@@ -402,7 +424,8 @@ CREATE TABLE `surat` (
   `status` varchar(100) NOT NULL,
   `link` text NOT NULL,
   `pengambil` varchar(128) NOT NULL,
-  `waktu_update` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `waktu_update` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `foto` text NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_kategori` int(10) NOT NULL,
   `deskripsi` varchar(128) NOT NULL,
@@ -413,9 +436,14 @@ CREATE TABLE `surat` (
 -- Dumping data untuk tabel `surat`
 --
 
-INSERT INTO `surat` (`id_surat`, `nomor_surat`, `nama`, `umur`, `pekerjaan`, `jenis_kelamin`, `nik`, `hp`, `alamat`, `tanggal`, `jenis`, `pesan`, `status`, `link`, `pengambil`, `waktu_update`, `id_user`, `id_kategori`, `deskripsi`, `id_dinas`) VALUES
-(27, '', 'fikrih', '', '', 'perempuan', '3305031106990009', '0895414112157', 'DK Krangkeng RT 02 RW 01', '2021-04-09', 'Surat Keterangan Usaha', '<p>warung makan</p>', 'Selesai', '606fa1a581f54.pdf', 'nobita', '2021-04-12 19:07:04', 32, 3, 'Silahkan Ambil ke balai desa dan bawa berkas persyaratan', 1),
-(28, '122', 'fikri haikal', '', '', 'perempuan', '3305031106990004', '0891', 'DK Krangkeng RT 02 RW 01', '2021-04-09', 'Surat Keterangan Usaha', '<p>Buat Meminta Perizinan Membuka Usaha Warung</p>', 'Selesai', '6070179554695.pdf', 'baskoro', '2021-04-09 16:01:11', 33, 3, 'Silahkan Ambil ke balai desa dan bawa berkas persyaratam', 1);
+INSERT INTO `surat` (`id_surat`, `nomor_surat`, `nama`, `umur`, `pekerjaan`, `jenis_kelamin`, `nik`, `hp`, `alamat`, `tanggal`, `jenis`, `pesan`, `status`, `link`, `pengambil`, `waktu_update`, `foto`, `id_user`, `id_kategori`, `deskripsi`, `id_dinas`) VALUES
+(27, '', 'fikrih', '', '', 'perempuan', '3305031106990009', '0895414112157', 'DK Krangkeng RT 02 RW 01', '2021-04-09', 'Surat Keterangan Usaha', '<p>warung makan</p>', 'Selesai', '606fa1a581f54.pdf', 'nobita', '2021-04-18 15:54:45', 'default.png', 32, 3, 'Silahkan Ambil ke balai desa dan bawa berkas persyaratan', 1),
+(28, '', 'fikri haikal', '', '', 'perempuan', '3305031106990004', '0891', 'DK Krangkeng RT 02 RW 01', '2021-04-09', 'Surat Keterangan Usaha', '<p>Buat Meminta Perizinan Membuka Usaha Warung</p>', 'Selesai', '6070179554695.pdf', 'baskoro', '2021-04-19 12:35:49', 'default.png', 33, 3, 'Silahkan Ambil ke balai desa dan bawa berkas persyaratam', 1),
+(29, '', 'fikri haikal', '', '', '', '3305031106990004', '0891', 'DK Krangkeng RT 02 RW 01', '2021-04-17', 'Surat Kematian', '<p>Silahkan isi keperluan atau keterangan lainnya disini</p>', 'Diperiksa', '', '', '2021-04-18 15:54:50', 'default.png', 33, 0, '', 0),
+(30, '', 'fikri haikal', '', '', '', '3305031106990004', '0891', 'DK Krangkeng RT 02 RW 01', '2021-04-18', 'Surat Keterangan Usaha', '<p>Coba upload5</p>', 'Diperiksa', '', '', '2021-04-18 16:12:36', 'default.png', 33, 0, '', 0),
+(31, '', 'fikri haikal', '', '', '', '3305031106990004', '0891', 'DK Krangkeng RT 02 RW 01', '2021-04-18', 'Surat Keterangan Belum Pernah Menikah', '<p>coba foto</p>', 'Diperiksa', '', '', '2021-04-18 16:12:40', 'default.png', 33, 0, '', 0),
+(32, '1904210001', 'fikri haikal', '', '', '', '3305031106990004', '0891', 'DK Krangkeng RT 02 RW 01', '2021-04-19', 'Surat Izin Acara', '<p>Coba resi surat2</p>', 'Selesai', '', '', '2021-04-19 13:57:31', 'default.png', 33, 0, 'Silahkan Ambil ke balai desa dan bawa berkas persyaratan', 0),
+(33, '1904210002', 'fikri haikal', '', '', '', '3305031106990004', '0891', 'DK Krangkeng RT 02 RW 01', '2021-04-19', 'Surat Keterangan Kelahiran', 'Resi dashboard', 'Selesai', '', '', '2021-04-19 13:57:37', 'default.png', 33, 0, '', 0);
 
 --
 -- Trigger `surat`
@@ -453,7 +481,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `alamat`, `hp`, `KTP`, `foto`, `status`) VALUES
 (32, 'fikrih', 'fikrihaikal11', 'DK Krangkeng RT 02 RW 01', '0895414112157', '3305031106990009', 'avatar-1.jpg', 'aktif'),
-(33, 'fikri haikal', '1212', 'DK Krangkeng RT 02 RW 01', '0891', '3305031106990004', 'avatar-1.jpg', 'aktif');
+(33, 'fikri haikal', '123456', 'DK Krangkeng RT 02 RW 01', '0891', '3305031106990004', 'avatar-1.jpg', 'aktif');
 
 --
 -- Indexes for dumped tables
@@ -544,7 +572,7 @@ ALTER TABLE `dinas`
 -- AUTO_INCREMENT untuk tabel `fitur`
 --
 ALTER TABLE `fitur`
-  MODIFY `id_fitur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id_fitur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT untuk tabel `instansi`
@@ -568,7 +596,7 @@ ALTER TABLE `kategorisurat`
 -- AUTO_INCREMENT untuk tabel `notifikasi`
 --
 ALTER TABLE `notifikasi`
-  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
 -- AUTO_INCREMENT untuk tabel `rating`
@@ -586,7 +614,7 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT untuk tabel `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

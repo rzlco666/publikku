@@ -30,6 +30,7 @@ class Surat extends CI_Controller
         $id_user = $this->session->userdata('id_user');
         $data['user'] = $this->authen->getById($id_user);
         $data['notifikasi'] = $this->laporan->getAllNotif();
+        $data['invoice']=$this->pengajuan->get_no_invoice();
         $this->load->view('templates_user/header', $data);
         $this->load->view('templates_user/sidebar');
         $this->load->view('surat_dash/create', $data);
@@ -54,6 +55,7 @@ class Surat extends CI_Controller
             $data['tanggal'] = $this->input->post('tanggal');
             $data['id_user'] = $this->input->post('id_user');
             $data['jenis'] = $this->input->post('jenis');
+            $data['nomor_surat'] = $this->input->post('no_invoice');
 
             //cek imange
             $upload_image = $_FILES['image']['name'];
@@ -160,6 +162,17 @@ class Surat extends CI_Controller
         $this->load->view('templates_user/sidebar');
         $this->load->view('surat_dash/edit', $data);
         $this->load->view('templates_user/footer');
+
+    }
+
+    public function cetak($id_surat)
+    {
+        $data['jenis_surat'] = $this->pengajuan->getAllJenis();
+        $id_user = $this->session->userdata('id_user');
+        $data['user'] = $this->authen->getById($id_user);
+        $data['notifikasi'] = $this->laporan->getAllNotif();
+        $data['surat'] = $this->pengajuan->getById($id_surat);
+        $this->load->view('surat_dash/cetak', $data);
 
     }
 
